@@ -4,6 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@colorC4AEAD"
     tools:context=".CalculatorActivity">
 
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="-10dp"
+        tools:layout_editor_absoluteY="296dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="148dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
