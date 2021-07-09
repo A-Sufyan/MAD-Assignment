@@ -13,6 +13,8 @@ public class ShoppingListViewHolder extends RecyclerView.ViewHolder {
 
     public ShoppingListViewHolder(View itemView){
         super(itemView);
-
+        foodName = itemView.findViewById(R.id.textView_FoodName);
+        foodCategory = itemView.findViewById(R.id.textView_FoodCategory);
+        foodImage = itemView.findViewById(R.id.imageView_FoodImage);
     }
 }
