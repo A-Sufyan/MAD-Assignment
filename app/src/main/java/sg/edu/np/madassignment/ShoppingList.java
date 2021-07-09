@@ -3,11 +3,11 @@ package sg.edu.np.madassignment;
 import android.media.Image;
 
 public class ShoppingList {
-    private String foodName;
-    private String foodCategory;
-    private Image foodImage;
-    //private String foodDescription
-    //private Integer foodQuantity
+    public String foodName;
+    public String foodCategory;
+    public Image foodImage;
+    //public String foodDescription
+    //public Integer foodQuantity
 
     public String getFoodName() {
         return foodName;
