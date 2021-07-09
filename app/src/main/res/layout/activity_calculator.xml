@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@colorC4AEAD"
+    android:background="@color/graypink"
     tools:context=".CalculatorActivity">
 
     <EditText
@@ -13,14 +13,14 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number"
-        tools:layout_editor_absoluteX="-10dp"
-        tools:layout_editor_absoluteY="296dp" />
+        tools:layout_editor_absoluteX="143dp"
+        tools:layout_editor_absoluteY="72dp" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="148dp" />
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="80dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
