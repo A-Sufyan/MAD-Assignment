@@ -11,10 +11,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
     @Override
     protected void onStart(){
         super.onStart();
     }
+
     @Override
     protected void onResume(){
         super.onResume();
@@ -27,6 +29,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy(){
         super.onDestroy();
     }
-
 
 }
