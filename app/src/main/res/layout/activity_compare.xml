@@ -16,7 +16,7 @@
         android:ems="10"
         android:fontFamily="@font/raleway"
         android:hint="how much are you paying? ($)"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:textAlignment="center"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +41,7 @@
         android:id="@+id/amountEditText"
         android:layout_width="262dp"
         android:layout_height="41dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:fontFamily="@font/raleway"
@@ -65,21 +65,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/brandTextView" />
 
-    <EditText
-        android:id="@+id/brandEditText"
-        android:layout_width="262dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:fontFamily="@font/raleway"
-        android:hint="what are you getting?"
-        android:inputType="number"
-        android:textAlignment="center"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
     <TextView
         android:id="@+id/brandTextView"
         android:layout_width="wrap_content"
@@ -89,7 +74,6 @@
         android:text="Brand"
         android:textSize="22sp"
         app:layout_constraintEnd_toStartOf="@+id/brandEditText"
-        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -128,5 +112,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addtoCompare"
         app:layout_constraintVertical_bias="0.161" />
+
+    <EditText
+        android:id="@+id/brandEditText"
+        android:layout_width="262dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:fontFamily="@font/raleway"
+        android:hint="what are you getting?"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
