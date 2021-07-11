@@ -22,8 +22,6 @@ public class CompareActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compare);
         brandInput = findViewById(R.id.brandEditText);
@@ -31,20 +29,12 @@ public class CompareActivity extends AppCompatActivity {
         priceInput = findViewById(R.id.priceEditText);
         addtoCompareButton = findViewById(R.id.addtoCompare);
 
-        /*CompareItem sampleItem = new CompareItem();
-        sampleItem.setPrice(20.0);
-        sampleItem.setBrand("Sample Brand");
-        sampleItem.setAmount(2);
-        compareList.add(sampleItem);*/
-
         RecyclerView recyclerViewCompare = findViewById(R.id.compareRecyclerView);
         CompareItemAdapter compareAdapter = new CompareItemAdapter(compareList);
         LinearLayoutManager compareLayoutManager = new LinearLayoutManager(this);
         recyclerViewCompare.setLayoutManager(compareLayoutManager);
         recyclerViewCompare.setItemAnimator(new DefaultItemAnimator());
         recyclerViewCompare.setAdapter(compareAdapter);
-
-
 
         addtoCompareButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +47,6 @@ public class CompareActivity extends AppCompatActivity {
                 compareAdapter.notifyDataSetChanged();
             }
         });
-
     }
     @Override
     protected void onStart(){

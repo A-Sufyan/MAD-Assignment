@@ -27,6 +27,7 @@ public class CompareItemAdapter extends RecyclerView.Adapter
         CompareItem list_items = compareData.get(pos);
         holder.itemBrand.setText(list_items.getBrand());
         holder.itemPricePerAmt.setText(String.valueOf(list_items.CalculateValue()));
+
     }
 
     public int getItemCount() { return compareData.size(); }
