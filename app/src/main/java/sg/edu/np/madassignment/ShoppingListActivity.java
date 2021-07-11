@@ -19,14 +19,17 @@ public class ShoppingListActivity extends AppCompatActivity{
     //Variable initialization
     Spinner spinner;
     TextView spinnerTextView;
-    ArrayList<ShoppingList> shoppingList = new ArrayList<ShoppingList>();
+    private ArrayList<ShoppingList> shoppingList = new ArrayList<ShoppingList>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shoppinglist);
-        addItemsIntoList(shoppingList);
 
+        for (int i = 1; i < 5; i++){
+            ShoppingList item = new ShoppingList("ItemName" + String.valueOf(i), "Item", 100.0, 9.0);
+            shoppingList.add(item);
+        }
         //Variable assignation
         /*spinner = findViewById(R.id.spinner);
         spinnerTextView = findViewById(R.id.text_view);
@@ -37,25 +40,22 @@ public class ShoppingListActivity extends AppCompatActivity{
         buildSearchableSpinner(searchList);*/
 
         //RecyclerView
-        buildRecyclerView(shoppingList);
+        //buildRecyclerView(shoppingList);
+        RecyclerView recyclerView = findViewById(R.id.recyclerView_ShoppingList);
+        ShoppingListAdapter slAdapter = new ShoppingListAdapter(shoppingList);
+        LinearLayoutManager slLayoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(slLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(slAdapter);
     }
-    public void buildRecyclerView(ArrayList<ShoppingList> inputList) {
+    /*public void buildRecyclerView(ArrayList<ShoppingList> inputList) {
         RecyclerView recyclerView = findViewById(R.id.recyclerView_ShoppingList);
         ShoppingListAdapter slAdapter = new ShoppingListAdapter(inputList);
         LinearLayoutManager slLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(slLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(slAdapter);
-    }
-
-    public ArrayList<ShoppingList> addItemsIntoList(ArrayList<ShoppingList> sList){
-        for (int i = 1; i < 5; i++){
-            ShoppingList item = new ShoppingList("ItemName" + String.valueOf(i), "Item", 100.0, 9.0);
-            sList.add(item);
-        }
-        return sList;
-
-    }
+    }*/
 
     public ArrayList<String> addItemsToSpinner(ArrayList<String> sList){
         sList.add("Add items");
