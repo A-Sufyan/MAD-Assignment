@@ -8,13 +8,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ShoppingListViewHolder extends RecyclerView.ViewHolder {
     TextView foodName;
-    TextView foodCategory;
+    TextView foodAmount;
+    TextView foodPrice;
     ImageView foodImage;
 
     public ShoppingListViewHolder(View itemView){
         super(itemView);
         foodName = itemView.findViewById(R.id.textView_FoodName);
-        foodCategory = itemView.findViewById(R.id.textView_FoodCategory);
+        foodAmount = itemView.findViewById(R.id.textView_FoodAmount);
+        foodPrice = itemView.findViewById(R.id.textView_FoodPrice);
         foodImage = itemView.findViewById(R.id.imageView_FoodImage);
     }
 }

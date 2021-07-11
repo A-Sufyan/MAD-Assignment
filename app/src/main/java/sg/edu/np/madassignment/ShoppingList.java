@@ -6,8 +6,9 @@ public class ShoppingList {
     public String foodName;
     public String foodCategory;
     public Image foodImage;
-    //public String foodDescription
-    //public Integer foodQuantity
+    //public String foodDescription;
+    public Double foodAmount;
+    public Double foodPrice;
 
     public String getFoodName() {
         return foodName;
@@ -33,9 +34,27 @@ public class ShoppingList {
         this.foodImage = foodImage;
     }
 
-    public ShoppingList(String foodName, String foodCategory, Image foodImage) {
+    public Double getFoodAmount() {
+        return foodAmount;
+    }
+
+    public void setFoodAmount(Double foodAmount) {
+        this.foodAmount = foodAmount;
+    }
+
+    public Double getFoodPrice() {
+        return foodPrice;
+    }
+
+    public void setFoodPrice(Double foodPrice) {
+        this.foodPrice = foodPrice;
+    }
+
+    public ShoppingList(String foodName, String foodCategory, Image foodImage, Double foodAmount, Double foodPrice) {
         this.foodName = foodName;
         this.foodCategory = foodCategory;
         this.foodImage = foodImage;
+        this.foodAmount = foodAmount;
+        this.foodPrice = foodPrice;
     }
 }
