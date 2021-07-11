@@ -8,7 +8,7 @@
     tools:context=".CompareActivity">
 
     <EditText
-        android:id="@+id/amountEditText"
+        android:id="@+id/priceEditText"
         android:layout_width="262dp"
         android:layout_height="41dp"
         android:layout_marginTop="32dp"
@@ -20,7 +20,7 @@
         android:textAlignment="center"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/amountEditText2" />
+        app:layout_constraintTop_toBottomOf="@+id/amountEditText" />
 
     <TextView
         android:id="@+id/amountTextView2"
@@ -31,14 +31,14 @@
         android:text="Price"
         android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/addtoCompare"
-        app:layout_constraintEnd_toStartOf="@+id/amountEditText"
+        app:layout_constraintEnd_toStartOf="@+id/priceEditText"
         app:layout_constraintHorizontal_bias="0.573"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/amountTextView"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/amountEditText2"
+        android:id="@+id/amountEditText"
         android:layout_width="262dp"
         android:layout_height="41dp"
         android:layout_marginTop="36dp"
@@ -50,7 +50,7 @@
         android:textAlignment="center"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/amountEditText3" />
+        app:layout_constraintTop_toBottomOf="@+id/brandEditText" />
 
     <TextView
         android:id="@+id/amountTextView"
@@ -60,13 +60,13 @@
         android:fontFamily="@font/raleway"
         android:text="Amount"
         android:textSize="22sp"
-        app:layout_constraintEnd_toStartOf="@+id/amountEditText2"
+        app:layout_constraintEnd_toStartOf="@+id/amountEditText"
         app:layout_constraintHorizontal_bias="0.313"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/brandTextView" />
 
     <EditText
-        android:id="@+id/amountEditText3"
+        android:id="@+id/brandEditText"
         android:layout_width="262dp"
         android:layout_height="41dp"
         android:layout_marginTop="52dp"
@@ -88,7 +88,7 @@
         android:fontFamily="@font/raleway"
         android:text="Brand"
         android:textSize="22sp"
-        app:layout_constraintEnd_toStartOf="@+id/amountEditText3"
+        app:layout_constraintEnd_toStartOf="@+id/brandEditText"
         app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -117,7 +117,7 @@
         app:backgroundTint="#7A7A7A"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/amountEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/priceEditText" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/compareRecyclerView"

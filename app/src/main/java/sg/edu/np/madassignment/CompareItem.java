@@ -3,7 +3,7 @@ package sg.edu.np.madassignment;
 public class CompareItem {
     public String Brand;
     public Double Price;
-    public Double Amount;
+    public int Amount;
 
     public String getBrand() {
         return Brand;
@@ -21,11 +21,11 @@ public class CompareItem {
         Price = price;
     }
 
-    public Double getAmount() {
+    public int getAmount() {
         return Amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(int amount) {
         Amount = amount;
     }
     public Double CalculateValue() {
