@@ -29,11 +29,13 @@ public class DBHandler extends SQLiteOpenHelper {
         // Table Create Statement
         String CREATE_PRODUCTS_TABLE = "CREATE TABLE " + TABLE_PRODUCTS +
                 "(" + COLUMN_NAME + " TEXT,"
-                + COLUMN_ID + " INTEGER PRIMARY KEY,"
+                + COLUMN_ID + " INTEGER,"
                 + COLUMN_CATEGORY + " TEXT,"
                 + COLUMN_DESC + " TEXT,"
                 + COLUMN_AMT + " INTEGER,"
-                + COLUMN_PRICE + " INTEGER" + ")";
+                + COLUMN_PRICE + " INTEGER,"
+                + "PRIMARY KEY (" + COLUMN_ID + ", " + COLUMN_CATEGORY + ")"
+                + ")";
 
         // Creating table
         db.execSQL(CREATE_PRODUCTS_TABLE);
