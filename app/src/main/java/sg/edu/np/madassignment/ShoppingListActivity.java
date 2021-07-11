@@ -17,22 +17,55 @@ import java.util.ArrayList;
 
 public class ShoppingListActivity extends AppCompatActivity{
     //Variable initialization
-    private ArrayList<ShoppingList> shoppingList;
     Spinner spinner;
     TextView spinnerTextView;
+    ArrayList<ShoppingList> shoppingList = new ArrayList<ShoppingList>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shoppinglist);
+        addItemsIntoList(shoppingList);
 
         //Variable assignation
-        spinner = findViewById(R.id.spinner);
+        /*spinner = findViewById(R.id.spinner);
         spinnerTextView = findViewById(R.id.text_view);
         ArrayList<String> searchList = new ArrayList<>();
 
         //Spinner
         addItemsToSpinner(searchList);
+        buildSearchableSpinner(searchList);*/
+
+        //RecyclerView
+        buildRecyclerView(shoppingList);
+    }
+    public void buildRecyclerView(ArrayList<ShoppingList> inputList) {
+        RecyclerView recyclerView = findViewById(R.id.recyclerView_ShoppingList);
+        ShoppingListAdapter slAdapter = new ShoppingListAdapter(inputList);
+        LinearLayoutManager slLayoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(slLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(slAdapter);
+    }
+
+    public ArrayList<ShoppingList> addItemsIntoList(ArrayList<ShoppingList> sList){
+        for (int i = 1; i < 5; i++){
+            ShoppingList item = new ShoppingList("ItemName" + String.valueOf(i), "Item", 100.0, 9.0);
+            sList.add(item);
+        }
+        return sList;
+
+    }
+
+    public ArrayList<String> addItemsToSpinner(ArrayList<String> sList){
+        sList.add("Add items");
+        for (int i = 1; i < 5; i++){
+            sList.add("test" + String.valueOf(i));
+        }
+        return sList;
+    }
+
+    public void buildSearchableSpinner(ArrayList<String> searchList){
         spinner.setAdapter(new ArrayAdapter<>(ShoppingListActivity.this, android.R.layout.simple_spinner_dropdown_item, searchList));
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -52,24 +85,6 @@ public class ShoppingListActivity extends AppCompatActivity{
 
             }
         });
-
-        //RecyclerView
-        buildRecyclerView(shoppingList);
-    }
-    public void buildRecyclerView(ArrayList<ShoppingList> inputList) {
-        RecyclerView recyclerView = findViewById(R.id.recyclerView_ShoppingList);
-        ShoppingListAdapter slAdapter = new ShoppingListAdapter(inputList);
-        LinearLayoutManager slLayoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(slLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(slAdapter);
-    }
-    public ArrayList<String> addItemsToSpinner(ArrayList<String> sList){
-        sList.add("Add items");
-        for (int i = 1; i < 5; i++){
-            sList.add("test" + String.valueOf(i));
-        }
-        return sList;
     }
 
     @Override

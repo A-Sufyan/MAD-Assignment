@@ -26,9 +26,9 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListViewHo
 
     public void onBindViewHolder(ShoppingListViewHolder holder, int position){
         ShoppingList s = shoppingData.get(position);
-        holder.itemName.setText(String.valueOf(s));
-        holder.itemAmount.setText(String.valueOf(s) + 'g');
-        holder.itemPrice.setText('$' + String.valueOf(s));
+        holder.itemName.setText(s.getItemName());
+        holder.itemAmount.setText(String.valueOf(s.getItemAmount()));
+        holder.itemPrice.setText(String.valueOf(s.getItemPrice()));
         //holder.foodImage.setImageURI(s); <-- need to find solution to bind image for foodImage
     }
 
