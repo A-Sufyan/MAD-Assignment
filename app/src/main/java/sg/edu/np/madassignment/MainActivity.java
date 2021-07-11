@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.v(TAG, "Going to Compare page");
                 intent = new Intent(MainActivity.this, CompareActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.v(TAG, "Going to Shopping List page");
                 intent = new Intent(MainActivity.this, ShoppingListActivity.class);
+                startActivity(intent);
             }
         });
 
