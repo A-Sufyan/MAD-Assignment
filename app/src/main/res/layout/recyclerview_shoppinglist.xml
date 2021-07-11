@@ -12,7 +12,7 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/imageView_FoodImage"
+            android:id="@+id/imageView_ItemImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -26,7 +26,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView_FoodName"
+            android:id="@+id/textView_ItemName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="{insert food name}"
@@ -43,13 +43,13 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView_FoodAmount"
+                    android:id="@+id/textView_ItemAmount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="{insert food category}" />
 
                 <TextView
-                    android:id="@+id/textView_FoodPrice"
+                    android:id="@+id/textView_ItemPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
