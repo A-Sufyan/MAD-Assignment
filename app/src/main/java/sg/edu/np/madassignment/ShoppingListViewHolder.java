@@ -7,16 +7,16 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ShoppingListViewHolder extends RecyclerView.ViewHolder {
-    TextView foodName;
-    TextView foodAmount;
-    TextView foodPrice;
-    ImageView foodImage;
+    TextView itemName;
+    TextView itemAmount;
+    TextView itemPrice;
+    ImageView itemImage;
 
     public ShoppingListViewHolder(View itemView){
         super(itemView);
-        foodName = itemView.findViewById(R.id.textView_FoodName);
-        foodAmount = itemView.findViewById(R.id.textView_FoodAmount);
-        foodPrice = itemView.findViewById(R.id.textView_FoodPrice);
-        foodImage = itemView.findViewById(R.id.imageView_FoodImage);
+        itemName = itemView.findViewById(R.id.textView_ItemName);
+        itemAmount = itemView.findViewById(R.id.textView_ItemAmount);
+        itemPrice = itemView.findViewById(R.id.textView_ItemPrice);
+        itemImage = itemView.findViewById(R.id.imageView_ItemImage);
     }
 }
