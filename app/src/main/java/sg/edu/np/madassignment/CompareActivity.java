@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
-public class CalculatorActivity extends AppCompatActivity {
+public class CompareActivity extends AppCompatActivity {
     ArrayList<ShoppingList> shoppingList; //To add food items into shopping list after comparison/calculation
 
     @Override

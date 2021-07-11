@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/graypink"
+    >
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -29,6 +31,7 @@
             android:id="@+id/textView_ItemName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway"
             android:text="{insert food name}"
             android:textSize="24sp" />
 
@@ -46,6 +49,7 @@
                     android:id="@+id/textView_ItemAmount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway"
                     android:text="{insert food category}" />
 
                 <TextView
@@ -53,6 +57,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:fontFamily="@font/raleway"
                     android:text="{insert food price}" />
 
             </LinearLayout>

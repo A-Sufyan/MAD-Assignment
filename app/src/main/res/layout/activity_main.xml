@@ -11,12 +11,14 @@
         android:id="@+id/homeTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/raleway"
         android:text="home"
         android:textColor="#737171"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,23 +28,23 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/raleway"
         android:text="What do you need to know?"
-        android:textColor="#737171"
+        android:textColor="#7A7A7A"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.274"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/GoToAdvice"
         app:layout_constraintTop_toBottomOf="@+id/adviceTitle"
         app:layout_constraintVertical_bias="0.047" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/GoToAdvice"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_marginStart="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/GoToShoppingList"
         app:layout_constraintVertical_bias="0.278"
         app:srcCompat="@drawable/ic_baseline_question_answer_24" />
 
@@ -53,27 +55,27 @@
         android:layout_marginTop="108dp"
         android:fontFamily="@font/raleway"
         android:text="advice"
-        android:textColor="#737171"
+        android:textColor="#7A7A7A"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.126"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/GoToAdvice"
         app:layout_constraintTop_toBottomOf="@+id/listDesc" />
 
     <TextView
-        android:id="@+id/calculatorTitle"
+        android:id="@+id/compareTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="116dp"
         android:fontFamily="@font/raleway"
-        android:text="calculator"
-        android:textColor="#737171"
+        android:text="compare"
+        android:textColor="#7A7A7A"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.153"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/GoToCompare"
         app:layout_constraintTop_toBottomOf="@+id/homeTitle" />
 
     <TextView
@@ -83,12 +85,12 @@
         android:layout_marginTop="104dp"
         android:fontFamily="@font/raleway"
         android:text="list"
-        android:textColor="#737171"
+        android:textColor="#7A7A7A"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.111"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/GoToShoppingList"
         app:layout_constraintTop_toBottomOf="@+id/calculatorDesc" />
 
     <TextView
@@ -98,12 +100,12 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/raleway"
         android:text="Is it worth it?"
-        android:textColor="#737171"
+        android:textColor="#7A7A7A"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.141"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/calculatorTitle" />
+        app:layout_constraintStart_toEndOf="@+id/GoToCompare"
+        app:layout_constraintTop_toBottomOf="@+id/compareTitle" />
 
     <TextView
         android:id="@+id/listDesc"
@@ -112,15 +114,15 @@
         android:layout_marginTop="12dp"
         android:fontFamily="@font/raleway"
         android:text="What do you need to get?"
-        android:textColor="#737171"
+        android:textColor="#7A7A7A"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/GoToShoppingList"
         app:layout_constraintTop_toBottomOf="@+id/listTitle" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/GoToCompare"
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_marginStart="36dp"
@@ -130,13 +132,13 @@
         app:srcCompat="@drawable/ic_baseline_calculate_24" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/GoToShoppingList"
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="64dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/GoToCompare"
         app:srcCompat="@drawable/ic_baseline_checklist_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
