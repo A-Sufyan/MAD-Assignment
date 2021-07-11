@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,15 +21,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.v(TAG, "On Create main Activity!");
-        GoToCalculator = findViewById(R.id.GoToCalc);
+        GoToCalculator = findViewById(R.id.GoToCompare);
         GoToShoppingList = findViewById(R.id.GoToShoppingList);
         GoToAdvice = findViewById(R.id.GoToAdvice);
 
         GoToCalculator.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.v(TAG, "Going to Calculator page");
-                intent = new Intent(MainActivity.this, CalculatorActivity.class);
+                Log.v(TAG, "Going to Compare page");
+                intent = new Intent(MainActivity.this, CompareActivity.class);
             }
         });
 
