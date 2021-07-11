@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.v(TAG, "On Create main Activity!");
         GoToCalculator = findViewById(R.id.GoToCompare);
-        GoToShoppingList = findViewById(R.id.GoToShoppingList);
+        GoToShoppingList = (ImageView) findViewById(R.id.GoToShoppingList);
         GoToAdvice = findViewById(R.id.GoToAdvice);
 
         GoToCalculator.setOnClickListener(new View.OnClickListener() {

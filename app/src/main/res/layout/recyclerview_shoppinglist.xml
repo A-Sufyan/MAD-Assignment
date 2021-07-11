@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/raleway"
-            android:text="{insert food name}"
+            android:text="{insert item name}"
             android:textSize="24sp" />
 
         <LinearLayout
@@ -50,7 +50,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/raleway"
-                    android:text="{insert food category}" />
+                    android:text="{insert item amount}" />
 
                 <TextView
                     android:id="@+id/textView_ItemPrice"
@@ -58,7 +58,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/raleway"
-                    android:text="{insert food price}" />
+                    android:text="{insert item price}" />
 
             </LinearLayout>
 

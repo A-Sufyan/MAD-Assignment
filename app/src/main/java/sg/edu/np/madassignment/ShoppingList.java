@@ -50,10 +50,10 @@ public class ShoppingList {
         this.itemPrice = itemPrice;
     }
 
-    public ShoppingList(String itemName, String itemCategory, Image itemImage, Double itemAmount, Double itemPrice) {
+    public ShoppingList(String itemName, String itemCategory/*Image itemImage*/, Double itemAmount, Double itemPrice) {
         this.itemName = itemName;
         this.itemCategory = itemCategory;
-        this.itemImage = itemImage;
+        //this.itemImage = itemImage;
         this.itemAmount = itemAmount;
         this.itemPrice = itemPrice;
     }
