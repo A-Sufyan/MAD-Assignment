@@ -31,18 +31,18 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.274"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/GoToAdvice"
         app:layout_constraintTop_toBottomOf="@+id/adviceTitle"
         app:layout_constraintVertical_bias="0.047" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/GoToAdvice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/GoToShoppingList"
         app:layout_constraintVertical_bias="0.278"
         app:srcCompat="@drawable/ic_baseline_question_answer_24" />
 
@@ -58,7 +58,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.126"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/GoToAdvice"
         app:layout_constraintTop_toBottomOf="@+id/listDesc" />
 
     <TextView
@@ -73,7 +73,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.153"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/GoToCalc"
         app:layout_constraintTop_toBottomOf="@+id/homeTitle" />
 
     <TextView
@@ -88,7 +88,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.111"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/GoToShoppingList"
         app:layout_constraintTop_toBottomOf="@+id/calculatorDesc" />
 
     <TextView
@@ -102,7 +102,7 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.141"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/GoToCalc"
         app:layout_constraintTop_toBottomOf="@+id/calculatorTitle" />
 
     <TextView
@@ -116,11 +116,11 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/GoToShoppingList"
         app:layout_constraintTop_toBottomOf="@+id/listTitle" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/GoToCalc"
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_marginStart="36dp"
@@ -130,13 +130,13 @@
         app:srcCompat="@drawable/ic_baseline_calculate_24" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/GoToShoppingList"
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="64dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/GoToCalc"
         app:srcCompat="@drawable/ic_baseline_checklist_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
