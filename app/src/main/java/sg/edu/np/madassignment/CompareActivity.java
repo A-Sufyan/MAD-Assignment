@@ -14,20 +14,28 @@ import java.util.ArrayList;
 
 public class CompareActivity extends AppCompatActivity {
     ArrayList<ShoppingList> shoppingList; //To add food items into shopping list after comparison/calculation
-    ArrayList<CompareItem> compareList;
-    private EditText brandInput;
-    private EditText amountInput;
-    private EditText priceInput;
-    private Button addtoCompareButton;
+    ArrayList<CompareItem> compareList = new ArrayList<CompareItem>();
+    EditText brandInput;
+    EditText amountInput;
+    EditText priceInput;
+    Button addtoCompareButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compare);
         brandInput = findViewById(R.id.brandEditText);
         amountInput = findViewById(R.id.amountEditText);
         priceInput = findViewById(R.id.priceEditText);
         addtoCompareButton = findViewById(R.id.addtoCompare);
+
+        /*CompareItem sampleItem = new CompareItem();
+        sampleItem.setPrice(20.0);
+        sampleItem.setBrand("Sample Brand");
+        sampleItem.setAmount(2);
+        compareList.add(sampleItem);*/
 
         RecyclerView recyclerViewCompare = findViewById(R.id.compareRecyclerView);
         CompareItemAdapter compareAdapter = new CompareItemAdapter(compareList);
@@ -36,11 +44,13 @@ public class CompareActivity extends AppCompatActivity {
         recyclerViewCompare.setItemAnimator(new DefaultItemAnimator());
         recyclerViewCompare.setAdapter(compareAdapter);
 
+
+
         addtoCompareButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 CompareItem temporaryItem = new CompareItem();
-                temporaryItem.setPrice(Double.valueOf(brandInput.getText().toString()));
+                temporaryItem.setPrice(Double.valueOf(priceInput.getText().toString()));
                 temporaryItem.setAmount(Integer.valueOf(amountInput.getText().toString()));
                 temporaryItem.setBrand(brandInput.getText().toString());
                 compareList.add(temporaryItem);
