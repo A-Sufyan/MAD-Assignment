@@ -14,4 +14,13 @@
         <!-- Customize your theme here. -->
         <item name="android:windowTranslucentNavigation">true</item>
     </style>
+
+    <style name="Theme.MADAssignment.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.MADAssignment.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.MADAssignment.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

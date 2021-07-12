@@ -18,26 +18,45 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/shoppinglistTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/raleway"
+            android:gravity="center"
+            android:text="list"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
             android:id="@+id/text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:drawable/editbox_background"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/buttongray"
             android:drawableEnd="@drawable/ic_arrow"
+            android:fontFamily="@font/raleway"
             android:gravity="center_vertical"
-            android:hint="Select item"
-            android:padding="12dp" />
+            android:hint="choose item"
+            android:padding="12dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textStyle="italic"
+            app:drawableTint="#FFFFFF" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView_ShoppingList"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="307dp"
+            android:layout_height="wrap_content"
 
+            android:layout_gravity="center_horizontal"
             android:background="@color/graypink"
             tools:layout_editor_absoluteX="-31dp"
             tools:layout_editor_absoluteY="59dp" />
 
     </LinearLayout>
-  
+
 </androidx.constraintlayout.widget.ConstraintLayout>
   
 

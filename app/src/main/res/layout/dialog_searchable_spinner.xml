@@ -1,33 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/graypink"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@android:color/white">
+    android:id="@+id/linearLayout2">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select item"
+        android:fontFamily="@font/raleway"
+        android:text="select item"
         android:textSize="20sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        tools:layout_conversion_absoluteHeight="24dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_conversion_absoluteWidth="104dp" />
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/edit_text"
-        android:hint="Search..."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/editbox_background_normal"
+        android:fontFamily="@font/raleway"
+        android:hint="search"
         android:padding="12dp"
         android:singleLine="true"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:drawable/editbox_background"/>
+        tools:layout_conversion_absoluteHeight="45dp"
+        tools:layout_editor_absoluteY="47dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_conversion_absoluteWidth="379dp" />
 
     <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/list_view"/>
+        android:id="@+id/list_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_conversion_absoluteHeight="590dp"
+        tools:layout_conversion_absoluteWidth="379dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="101dp" />
 
 
 </LinearLayout>

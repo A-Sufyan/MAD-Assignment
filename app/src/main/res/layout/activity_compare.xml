@@ -85,6 +85,7 @@
         android:fontFamily="@font/raleway"
         android:text="compare"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -105,8 +106,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/compareRecyclerView"
-        android:layout_width="400dp"
-        android:layout_height="225dp"
+        android:layout_width="307dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="52dp"
         android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
