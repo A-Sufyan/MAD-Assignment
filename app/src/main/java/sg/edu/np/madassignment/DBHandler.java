@@ -2,6 +2,7 @@ package sg.edu.np.madassignment;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.icu.text.PluralRules;
@@ -142,4 +143,21 @@ public class DBHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    public ShoppingList findItem(ShoppingList itemName){
+        String query = "SELECT * FROM " + TABLE_PRODUCTS + " WHERE " + COLUMN_NAME + " = \"" + itemName +"\"";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+
+        ShoppingList item = new ShoppingList(itemName.itemName, itemName.itemCategory, itemName.itemAmount, itemName.getItemPrice());
+        if (cursor.moveToFirst()) {
+            item.setItemCategory(cursor.getString(1));
+            item.setItemAmount(cursor.getDouble(2));
+            item.setItemPrice(cursor.getDouble(3));
+        }
+        else {
+            item = null;
+        }
+        db.close();
+        return item;
+    }
 }
