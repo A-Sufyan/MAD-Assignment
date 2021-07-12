@@ -27,19 +27,18 @@ public class adviceActivity extends AppCompatActivity {
         String recievedDesc = recieveData.getString("productdesc");
         String recievedCategory = recieveData.getString("productcategory");
 
-        /*if(recieveData.getString("productcategory") == "f"){
-            productIcon.setImageResource(R.drawable.);
+        if(recieveData.getString("productcategory") == "f"){
+            productIcon.setImageResource(R.drawable.ic_food);
         }
         else if (recieveData.getString("productcategory") == "d"){
-            productIcon.setImageResource();
+            productIcon.setImageResource(R.drawable.ic_drinks);
 
         }
         else if (recieveData.getString("productcategory") == "h"){
-            productIcon.setImageResource();
-
-        }*/
-
-
+            productIcon.setImageResource(R.drawable.ic_household_items);
+        }
+        productName.setText(recievedName);
+        productDesc.setText(recievedDesc);
     }
 
     @Override
