@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -43,8 +44,21 @@ public class adviceActivityHomepage extends AppCompatActivity {
             @Override
             public void onClick(View v, int pos) {
                 Log.v(TAG, "Item in Rview Clicked!");
+                ClickedButton(pos);
             }
+
         };
+    }
+
+    private void ClickedButton(int position) {
+        Bundle extras = new Bundle();
+        extras.putString("productname", myList.get(position).getItemName());
+        extras.putString("productdesc", myList.get(position).getItemDescription());
+        extras.putString("productcategory", myList.get(position).getItemCategory());
+
+        Intent intent = new Intent(getApplicationContext(), adviceActivity.class);
+        intent.putExtras(extras);
+        startActivity(intent);
     }
 
     @Override
