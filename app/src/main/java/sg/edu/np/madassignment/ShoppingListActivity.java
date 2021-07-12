@@ -6,10 +6,17 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,8 +25,8 @@ import java.util.ArrayList;
 
 public class ShoppingListActivity extends AppCompatActivity{
     //Variable initialization
-    Spinner spinner;
     TextView spinnerTextView;
+    Dialog dialog;
     ArrayList<ShoppingList> shoppingList = new ArrayList<>();
 
     @Override
@@ -27,23 +34,27 @@ public class ShoppingListActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shoppinglist);
 
+        //Assigning of Variables
+        spinnerTextView = findViewById(R.id.text_view);
+
+        //Add items into ShoppingList
+        addItemsIntoShoppingList(shoppingList);
+
+        //Build RecyclerView
+        buildRecyclerView();
+
+        //Build Searchable Spinner
+        buildSearchableSpinner();
+    }
+
+    public ArrayList<ShoppingList> addItemsIntoShoppingList(ArrayList<ShoppingList> sList) {
         for (int i = 1; i < 5; i++){
             ShoppingList item = new ShoppingList("ItemName" + String.valueOf(i), "Item", 100.0, 9.0);
-            shoppingList.add(item);
+            sList.add(item);
         }
-        //Variable assignation
-        /*spinner = findViewById(R.id.spinner);
-        spinnerTextView = findViewById(R.id.text_view);
-        ArrayList<String> searchList = new ArrayList<>();
-
-        //Spinner
-        addItemsToSpinner(searchList);
-        buildSearchableSpinner(searchList);*/
-
-        //RecyclerView
-        //buildRecyclerView(shoppingList);
-        buildRecyclerView();
+        return sList;
     }
+
     public void buildRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.recyclerView_ShoppingList);
         ShoppingListAdapter slAdapter = new ShoppingListAdapter(shoppingList);
@@ -56,32 +67,46 @@ public class ShoppingListActivity extends AppCompatActivity{
         recyclerView.setAdapter(slAdapter);
     }
 
-    public ArrayList<String> addItemsToSpinner(ArrayList<String> sList){
-        sList.add("Add items");
-        for (int i = 1; i < 5; i++){
-            sList.add("test" + String.valueOf(i));
-        }
-        return sList;
-    }
-
-    public void buildSearchableSpinner(ArrayList<String> searchList){
-        spinner.setAdapter(new ArrayAdapter<>(ShoppingListActivity.this, android.R.layout.simple_spinner_dropdown_item, searchList));
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+    public void buildSearchableSpinner() {
+        spinnerTextView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (position == 0){
-                    Toast.makeText(getApplicationContext(), "Please select item", Toast.LENGTH_SHORT).show();
-                    spinnerTextView.setText("");
-                }
-                else{
-                    String selectItem = parent.getItemAtPosition(position).toString();
-                    spinnerTextView.setText(selectItem);
-                }
-            }
+            public void onClick(View v) {
+                //Dialog
+                dialog = new Dialog(ShoppingListActivity.this);
+                dialog.setContentView(R.layout.dialog_searchable_spinner);
+                dialog.getWindow().setLayout(650, 800);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+                EditText editText = dialog.findViewById(R.id.edit_text);
+                ListView listView = dialog.findViewById(R.id.list_view);
 
+                ArrayAdapter<ShoppingList> adapter = new ArrayAdapter<>(ShoppingListActivity.this, android.R.layout.simple_list_item_1, shoppingList);
+                listView.setAdapter(adapter);
+
+                editText.addTextChangedListener(new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+                        adapter.getFilter().filter(s);
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
+
+                    }
+                });
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        spinnerTextView.setText(String.valueOf(adapter.getItem(position)));
+                        dialog.dismiss();
+                    }
+                });
             }
         });
     }
