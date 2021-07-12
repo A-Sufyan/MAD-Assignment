@@ -41,7 +41,8 @@
             android:padding="12dp"
             android:textColor="#FFFFFF"
             android:textColorHint="#FFFFFF"
-            android:textStyle="italic" />
+            android:textStyle="italic"
+            app:drawableTint="#FFFFFF" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView_ShoppingList"
