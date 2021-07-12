@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,20 +16,22 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListViewHo
     ArrayList<ShoppingList> shoppingData;
 
     public ShoppingListAdapter(ArrayList<ShoppingList> input){
-        shoppingData = input;
+        this.shoppingData = input;
     }
 
     public ShoppingListViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
         View item = LayoutInflater.from(parent.getContext()).inflate(
-                android.R.layout.simple_list_item_1, parent, false);
+                R.layout.recyclerview_shoppinglist, parent, false);
         return new ShoppingListViewHolder(item);
     }
 
     public void onBindViewHolder(ShoppingListViewHolder holder, int position){
-        ShoppingList s = shoppingData.get(position);
-        holder.itemName.setText(String.valueOf(s.getItemName()));
-        holder.itemAmount.setText(String.valueOf(s.getItemAmount()));
-        holder.itemPrice.setText(String.valueOf(s.getItemPrice()));
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        params.height = 100;
+        ShoppingList shoppingItem = shoppingData.get(position);
+        holder.itemName.setText(shoppingItem.getItemName());
+        holder.itemAmount.setText('$' + String.valueOf(String.format("%.2f", shoppingItem.getItemAmount())));
+        holder.itemPrice.setText(String.valueOf(shoppingItem.getItemPrice()) + " (g)");
         //holder.foodImage.setImageURI(s); <-- TODO need to find solution to bind image for foodImage
     }
 
