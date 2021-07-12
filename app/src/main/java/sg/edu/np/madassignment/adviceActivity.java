@@ -10,6 +10,7 @@ public class adviceActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advice);
+        ShoppingList newProduct = new ShoppingList();
 
     }
 
