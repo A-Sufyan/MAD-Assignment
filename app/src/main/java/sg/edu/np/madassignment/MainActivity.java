@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.v(TAG, "Going to advice page");
-                intent = new Intent(MainActivity.this, adviceActivity.class);
+                intent = new Intent(MainActivity.this, adviceActivityHomepage.class);
                 startActivity(intent);
             }
         });

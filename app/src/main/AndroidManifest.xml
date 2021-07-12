@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MADAssignment">
-        <activity android:name=".adviceActivity"></activity>
+        <activity
+            android:name=".adviceActivityHomepage"
+            android:label="@string/title_activity_advice_homepage"
+            android:theme="@style/Theme.MADAssignment.NoActionBar"></activity>
+        <activity android:name=".adviceActivity" />
         <activity android:name=".CompareActivity" />
         <activity android:name=".ShoppingListActivity" />
         <activity android:name=".MainActivity">
