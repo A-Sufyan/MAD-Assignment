@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.v(TAG, "On Create main Activity!");
+
         GoToCalculator = findViewById(R.id.GoToCompare);
         GoToShoppingList = (ImageView) findViewById(R.id.GoToShoppingList);
         GoToAdvice = findViewById(R.id.GoToAdvice);
@@ -47,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.v(TAG, "Going to advice page");
-                // TODO implement advice activity
+                intent = new Intent(MainActivity.this, adviceActivity.class);
+                startActivity(intent);
             }
         });
 
