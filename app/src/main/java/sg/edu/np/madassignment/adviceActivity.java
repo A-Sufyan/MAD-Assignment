@@ -16,7 +16,7 @@ public class adviceActivity extends AppCompatActivity {
         Log.v(TAG, "On Create Advice Activity");
 
         setContentView(R.layout.activity_advice);
-        ShoppingList newProduct = new ShoppingList();
+        // ShoppingList newProduct = new ShoppingList();
         Bundle recieveData = getIntent().getExtras();
 
         TextView productName = findViewById(R.id.adviceActivityitemTitle);
@@ -27,7 +27,7 @@ public class adviceActivity extends AppCompatActivity {
         String recievedDesc = recieveData.getString("productdesc");
         String recievedCategory = recieveData.getString("productcategory");
 
-        if(recieveData.getString("productcategory") == "f"){
+        /*if(recieveData.getString("productcategory") == "f"){
             productIcon.setImageResource(R.drawable.);
         }
         else if (recieveData.getString("productcategory") == "d"){
@@ -37,7 +37,7 @@ public class adviceActivity extends AppCompatActivity {
         else if (recieveData.getString("productcategory") == "h"){
             productIcon.setImageResource();
 
-        }
+        }*/
 
 
     }
