@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -27,6 +28,7 @@ public class ShoppingListActivity extends AppCompatActivity{
     //Variable initialization
     TextView spinnerTextView;
     Dialog dialog;
+    Context context;
     ArrayList<ShoppingList> shoppingList = new ArrayList<>();
 
     @Override
@@ -48,10 +50,18 @@ public class ShoppingListActivity extends AppCompatActivity{
     }
 
     public ArrayList<ShoppingList> addItemsIntoShoppingList(ArrayList<ShoppingList> sList) {
-        for (int i = 1; i < 5; i++){
-            ShoppingList item = new ShoppingList("ItemName" + String.valueOf(i), "Item", 100.0, 9.0);
+        /*for (int i = 1; i < 5; i++){
+            ShoppingList item = new ShoppingList("ItemName" + String.valueOf(i), "Item", null ,100.0, 9.0);
             sList.add(item);
-        }
+        }*/
+        ShoppingList item1 = new ShoppingList("Food", "F", null, 100.0, 9.0);
+        ShoppingList item2 = new ShoppingList("Drink", "D", null, 100.0, 9.0);
+        ShoppingList item3 = new ShoppingList("Household Item", "H", null, 100.0, 9.0);
+        ShoppingList item4 = new ShoppingList("Pet Item", "P", null, 100.0, 9.0);
+        sList.add(item1);
+        sList.add(item2);
+        sList.add(item3);
+        sList.add(item4);
         return sList;
     }
 

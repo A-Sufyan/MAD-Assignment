@@ -17,6 +17,6 @@ public class ShoppingListViewHolder extends RecyclerView.ViewHolder {
         itemName = itemView.findViewById(R.id.textView_ItemName);
         itemAmount = itemView.findViewById(R.id.textView_ItemAmount);
         itemPrice = itemView.findViewById(R.id.textView_ItemPrice);
-        itemImage = itemView.findViewById(R.id.imageView_ItemImage);
+        itemImage = (ImageView) itemView.findViewById(R.id.imageView_ItemImage);
     }
 }
