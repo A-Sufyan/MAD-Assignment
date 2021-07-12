@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/adviceActivityRecyclerView"
         android:layout_width="307dp"
         android:layout_height="450dp"
         android:layout_marginBottom="108dp"
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:text="choose a product to learn more"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintBottom_toTopOf="@+id/adviceActivityRecyclerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.217"
         app:layout_constraintStart_toStartOf="parent"

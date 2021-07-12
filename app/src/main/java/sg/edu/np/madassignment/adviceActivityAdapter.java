@@ -9,7 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class adviceActivityAdapter {
+public class adviceActivityAdapter extends
+        RecyclerView.Adapter<adviceActivityAdapter.adviceActivityViewHolder>{
     ArrayList<ShoppingList> list_products;
     private RecyclerViewClickListener listener;
 
@@ -45,6 +46,7 @@ public class adviceActivityAdapter {
         ShoppingList products_list = list_products.get(pos);
         holder.productName.setText(products_list.getItemName());
     }
+    public int getItemCount() {return list_products.size();}
 
     public interface RecyclerViewClickListener {
         void onClick(View v, int pos);
