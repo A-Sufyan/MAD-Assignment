@@ -58,4 +58,5 @@ public class ShoppingList {
         this.itemAmount = itemAmount;
         this.itemPrice = itemPrice;
     }
+    public ShoppingList() {};
 }

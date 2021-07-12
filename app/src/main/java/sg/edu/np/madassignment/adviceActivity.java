@@ -16,7 +16,6 @@ public class adviceActivity extends AppCompatActivity {
         Log.v(TAG, "On Create Advice Activity");
 
         setContentView(R.layout.activity_advice);
-        // ShoppingList newProduct = new ShoppingList();
         Bundle recieveData = getIntent().getExtras();
 
         TextView productName = findViewById(R.id.adviceActivityitemTitle);
