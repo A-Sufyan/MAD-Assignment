@@ -36,7 +36,7 @@ public class DBHandler extends SQLiteOpenHelper {
                 + COLUMN_CATEGORY + " TEXT," // col 2
                 + COLUMN_DESC + " TEXT," // col 3
                 + COLUMN_AMTG + " INTEGER," // col 4
-                + COLUMN_PRICE + " INTEGER," // col 5
+                + COLUMN_PRICE + " DOUBLE," // col 5
                 + "PRIMARY KEY (" + COLUMN_ID + ", " + COLUMN_CATEGORY + ")"
                 + ")";
 
@@ -152,12 +152,18 @@ public class DBHandler extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 currentItem.setItemName(cursor.getString(0));
-                currentItem.setItemAmount();
-                currentItem.setItemCategory(cursor.getString(1));
-                currentItem.setItemImage();
-                currentItem.setItemDescription();
-            }
+                currentItem.setItemAmount(cursor.getInt(4));
+                currentItem.setItemCategory(cursor.getString(2));
+                currentItem.setItemDescription(cursor.getString(3));
+                currentItem.setItemPrice(cursor.getDouble(5));
+                list.add(currentItem);
+            } while(cursor.moveToNext());
         }
+        else{
+            list = null;
+        }
+        db.close();
+        return list;
     }
 
 

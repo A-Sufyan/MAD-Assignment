@@ -7,7 +7,7 @@ public class ShoppingList {
     public String itemName;
     public String itemCategory;
     public String itemDescription;
-    public Double itemAmount;
+    public Integer itemAmount;
     public Double itemPrice;
 
     public String getItemName() {
@@ -26,11 +26,11 @@ public class ShoppingList {
         this.itemCategory = itemCategory;
     }
 
-    public Double getItemAmount() {
+    public Integer getItemAmount() {
         return itemAmount;
     }
 
-    public void setItemAmount(Double itemAmount) {
+    public void setItemAmount(Integer itemAmount) {
         this.itemAmount = itemAmount;
     }
 
@@ -50,7 +50,7 @@ public class ShoppingList {
         this.itemDescription = itemDescription;
     }
 
-    public ShoppingList(String itemName, String itemCategory, Double itemAmount,
+    public ShoppingList(String itemName, String itemCategory, Integer itemAmount,
                         Double itemPrice, String itemDescription) {
         this.itemName = itemName;
         this.itemCategory = itemCategory;
