@@ -54,10 +54,10 @@ public class ShoppingListActivity extends AppCompatActivity{
             ShoppingList item = new ShoppingList("ItemName" + String.valueOf(i), "Item", null ,100.0, 9.0);
             sList.add(item);
         }*/
-        ShoppingList item1 = new ShoppingList("Food", "F", null, 100.0, 9.0);
-        ShoppingList item2 = new ShoppingList("Drink", "D", null, 100.0, 9.0);
-        ShoppingList item3 = new ShoppingList("Household Item", "H", null, 100.0, 9.0);
-        ShoppingList item4 = new ShoppingList("Pet Item", "P", null, 100.0, 9.0);
+        ShoppingList item1 = new ShoppingList("Food", "F", null, 100.0, "9.0");
+        ShoppingList item2 = new ShoppingList("Drink", "D", null, 100.0, "9.0");
+        ShoppingList item3 = new ShoppingList("Household Item", "H", null, 100.0, "9.0");
+        ShoppingList item4 = new ShoppingList("Pet Item", "P", null, 100.0, "9.0");
         sList.add(item1);
         sList.add(item2);
         sList.add(item3);
