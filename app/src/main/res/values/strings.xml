@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MADAssignment</string>
     <color name="graypink">#D7C8CA</color>
+    <color name="buttongray">#7A7A7A</color>
 </resources>
