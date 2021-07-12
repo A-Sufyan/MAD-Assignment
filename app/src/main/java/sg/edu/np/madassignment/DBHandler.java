@@ -143,7 +143,7 @@ public class DBHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public ShoppingList findItem(ShoppingList itemName){
+    /*public ShoppingList findItem(ShoppingList itemName){
         String query = "SELECT * FROM " + TABLE_PRODUCTS + " WHERE " + COLUMN_NAME + " = \"" + itemName +"\"";
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
@@ -159,5 +159,5 @@ public class DBHandler extends SQLiteOpenHelper {
         }
         db.close();
         return item;
-    }
+    }*/
 }
