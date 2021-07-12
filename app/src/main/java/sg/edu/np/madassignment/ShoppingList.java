@@ -6,8 +6,7 @@ import android.media.Image;
 public class ShoppingList {
     public String itemName;
     public String itemCategory;
-    public Integer itemImage;
-    //public String itemDescription;
+    public String itemDescription;
     public Double itemAmount;
     public Double itemPrice;
 
@@ -27,14 +26,6 @@ public class ShoppingList {
         this.itemCategory = itemCategory;
     }
 
-    public Integer getItemImage() {
-        return itemImage;
-    }
-
-    public void setItemImage(Integer itemImage) {
-        this.itemImage = itemImage;
-    }
-
     public Double getItemAmount() {
         return itemAmount;
     }
@@ -51,12 +42,21 @@ public class ShoppingList {
         this.itemPrice = itemPrice;
     }
 
-    public ShoppingList(String itemName, String itemCategory,Integer itemImage, Double itemAmount, Double itemPrice) {
+    public String getItemDescription() {
+        return itemDescription;
+    }
+
+    public void setItemDescription(String itemDescription) {
+        this.itemDescription = itemDescription;
+    }
+
+    public ShoppingList(String itemName, String itemCategory, Double itemAmount,
+                        Double itemPrice, String itemDescription) {
         this.itemName = itemName;
         this.itemCategory = itemCategory;
-        this.itemImage = itemImage;
         this.itemAmount = itemAmount;
         this.itemPrice = itemPrice;
+        this.itemDescription = itemDescription;
     }
     public ShoppingList() {};
 }

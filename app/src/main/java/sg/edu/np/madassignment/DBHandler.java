@@ -31,12 +31,12 @@ public class DBHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db){
         // Table Create Statement
         String CREATE_PRODUCTS_TABLE = "CREATE TABLE " + TABLE_PRODUCTS +
-                "(" + COLUMN_NAME + " TEXT,"
-                + COLUMN_ID + " INTEGER,"
-                + COLUMN_CATEGORY + " TEXT,"
-                + COLUMN_DESC + " TEXT,"
-                + COLUMN_AMTG + " INTEGER,"
-                + COLUMN_PRICE + " INTEGER,"
+                "(" + COLUMN_NAME + " TEXT," // col 0
+                + COLUMN_ID + " INTEGER," // col 1
+                + COLUMN_CATEGORY + " TEXT," // col 2
+                + COLUMN_DESC + " TEXT," // col 3
+                + COLUMN_AMTG + " INTEGER," // col 4
+                + COLUMN_PRICE + " INTEGER," // col 5
                 + "PRIMARY KEY (" + COLUMN_ID + ", " + COLUMN_CATEGORY + ")"
                 + ")";
 
@@ -138,10 +138,28 @@ public class DBHandler extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
         // on upgrade drop older table
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_PRODUCTS);
-
         //create new table
         onCreate(db);
     }
+
+    public ArrayList<ShoppingList> getListOfShoppingList() {
+        ArrayList<ShoppingList> list = new ArrayList<>();
+
+        String query = "SELECT * FROM " + TABLE_PRODUCTS;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        ShoppingList currentItem = new ShoppingList();
+        if (cursor.moveToFirst()) {
+            do {
+                currentItem.setItemName(cursor.getString(0));
+                currentItem.setItemAmount();
+                currentItem.setItemCategory(cursor.getString(1));
+                currentItem.setItemImage();
+                currentItem.setItemDescription();
+            }
+        }
+    }
+
 
     /*public ShoppingList findItem(ShoppingList itemName){
         String query = "SELECT * FROM " + TABLE_PRODUCTS + " WHERE " + COLUMN_NAME + " = \"" + itemName +"\"";

@@ -21,7 +21,7 @@ public class adviceActivityHomepage extends AppCompatActivity {
         setContentView(R.layout.activity_advice_homepage);
 
         ShoppingList temporaryProduct = new ShoppingList();
-
+        myList = dbHandler.get
     }
 
     @Override
