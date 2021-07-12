@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 public class adviceActivity extends AppCompatActivity {
     private final static String TAG = "Advice Activty";
-    // TESTtttttttttttttttttttttttttttttttttttttttttttt
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
