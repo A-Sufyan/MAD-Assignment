@@ -30,7 +30,6 @@ public class adviceActivity extends AppCompatActivity {
         }
         else if (recieveData.getString("productcategory") == "d"){
             productIcon.setImageResource(R.drawable.ic_drinks);
-
         }
         else if (recieveData.getString("productcategory") == "h"){
             productIcon.setImageResource(R.drawable.ic_household_items);
