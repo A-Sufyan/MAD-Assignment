@@ -33,12 +33,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="15dp"
-            android:background="@android:drawable/editbox_background_normal"
+            android:background="@color/buttongray"
             android:drawableEnd="@drawable/ic_arrow"
             android:fontFamily="@font/raleway"
             android:gravity="center_vertical"
             android:hint="choose item"
             android:padding="12dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
             android:textStyle="italic" />
 
         <androidx.recyclerview.widget.RecyclerView
