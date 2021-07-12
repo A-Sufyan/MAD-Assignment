@@ -47,6 +47,7 @@ public class adviceActivityAdapter extends
         holder.productName.setText(products_list.getItemName());
     }
     public int getItemCount() {return list_products.size();}
+
     public interface RecyclerViewClickListener {
         void onClick(View v, int pos);
     }

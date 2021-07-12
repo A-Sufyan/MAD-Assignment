@@ -37,8 +37,6 @@ public class adviceActivityHomepage extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(myAdapter);
 
-
-
     }
     private void setOnClickListener() {
         listener = new adviceActivityAdapter.RecyclerViewClickListener() {
