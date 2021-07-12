@@ -2,6 +2,7 @@ package sg.edu.np.madassignment;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,7 +20,7 @@ public class ShoppingListActivity extends AppCompatActivity{
     //Variable initialization
     Spinner spinner;
     TextView spinnerTextView;
-    private ArrayList<ShoppingList> shoppingList = new ArrayList<ShoppingList>();
+    ArrayList<ShoppingList> shoppingList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,21 +42,19 @@ public class ShoppingListActivity extends AppCompatActivity{
 
         //RecyclerView
         //buildRecyclerView(shoppingList);
+        buildRecyclerView();
+    }
+    public void buildRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.recyclerView_ShoppingList);
         ShoppingListAdapter slAdapter = new ShoppingListAdapter(shoppingList);
         LinearLayoutManager slLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(slLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+        dividerItemDecoration.setDrawable(getResources().getDrawable(R.drawable.recyclerview_divider));
+        recyclerView.addItemDecoration(dividerItemDecoration);
         recyclerView.setAdapter(slAdapter);
     }
-    /*public void buildRecyclerView(ArrayList<ShoppingList> inputList) {
-        RecyclerView recyclerView = findViewById(R.id.recyclerView_ShoppingList);
-        ShoppingListAdapter slAdapter = new ShoppingListAdapter(inputList);
-        LinearLayoutManager slLayoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(slLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(slAdapter);
-    }*/
 
     public ArrayList<String> addItemsToSpinner(ArrayList<String> sList){
         sList.add("Add items");
