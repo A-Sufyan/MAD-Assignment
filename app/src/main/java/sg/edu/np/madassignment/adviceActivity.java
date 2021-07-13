@@ -26,13 +26,14 @@ public class adviceActivity extends AppCompatActivity {
         String recievedCategory = recieveData.getString("productcategory");
 
         if(recieveData.getString("productcategory") == "f"){
-            productIcon.setImageResource(R.drawable.ic_food);
+            productIcon.getResources().getDrawable(R.drawable.ic_food);
         }
         else if (recieveData.getString("productcategory") == "d"){
-            productIcon.setImageResource(R.drawable.ic_drinks);
+            productIcon.getResources().getDrawable(R.drawable.ic_drinks);
+
         }
         else if (recieveData.getString("productcategory") == "h"){
-            productIcon.setImageResource(R.drawable.ic_household_items);
+            productIcon.getResources().getDrawable(R.drawable.ic_household_items);
         }
         productName.setText(recievedName);
         productDesc.setText(recievedDesc);
