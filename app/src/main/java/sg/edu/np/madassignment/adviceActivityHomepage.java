@@ -26,10 +26,7 @@ public class adviceActivityHomepage extends AppCompatActivity {
         Log.v(TAG, "On create AdviceActivityHomepage");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advice_homepage);
-
-        ShoppingList temporaryProduct = new ShoppingList();
         myList = dbHandler.getListOfShoppingList();
-
         setOnClickListener();
         RecyclerView recyclerView = findViewById(R.id.adviceActivityRecyclerView);
         adviceActivityAdapter myAdapter = new adviceActivityAdapter(myList, listener);
