@@ -148,9 +148,9 @@ public class DBHandler extends SQLiteOpenHelper {
         String query = "SELECT * FROM " + TABLE_PRODUCTS;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(query, null);
-        ShoppingList currentItem = new ShoppingList();
         if (cursor.moveToFirst()) {
             do {
+                ShoppingList currentItem = new ShoppingList();
                 currentItem.setItemName(cursor.getString(0));
                 currentItem.setItemAmount(cursor.getInt(4));
                 currentItem.setItemCategory(cursor.getString(2));

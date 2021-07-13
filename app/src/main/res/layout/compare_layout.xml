@@ -1,38 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/graypink">
+    android:background="@color/graypink"
+    android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/compare_layoutBrand"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/raleway"
-        android:padding="5dp"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/compare_layoutPricePerAmount"
+        <TextView
+            android:id="@+id/compare_layoutBrand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/raleway"
+            android:padding="5dp"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/raleway"
-        android:padding="5dp"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/compare_layoutBrand"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/compare_layoutPricePerAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/raleway"
+            android:padding="5dp"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</LinearLayout>
