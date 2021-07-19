@@ -9,6 +9,13 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
+    /* TODO:
+        - Implement bottom navigation bar
+    *   - Allow CompareActivity to be able to add directly into shopping list
+        - Fix shopppingListActivity
+        - Implement Firebase to store items instead of local DB
+        - Clean up the UI
+        - */
     private final static String TAG = "Main Activity";
 
     private ImageView GoToCalculator;
