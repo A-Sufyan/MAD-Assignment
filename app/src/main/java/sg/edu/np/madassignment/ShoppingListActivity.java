@@ -28,7 +28,6 @@ public class ShoppingListActivity extends AppCompatActivity{
     //Variable initialization
     TextView spinnerTextView;
     Dialog dialog;
-    Context context;
     ArrayList<ShoppingList> shoppingList = new ArrayList<>();
 
     @Override
@@ -54,10 +53,10 @@ public class ShoppingListActivity extends AppCompatActivity{
             ShoppingList item = new ShoppingList("ItemName" + String.valueOf(i), "Item", null ,100.0, 9.0);
             sList.add(item);
         }*/
-        ShoppingList item1 = new ShoppingList("Food", "F", null, 100.0, "9.0");
-        ShoppingList item2 = new ShoppingList("Drink", "D", null, 100.0, "9.0");
-        ShoppingList item3 = new ShoppingList("Household Item", "H", null, 100.0, "9.0");
-        ShoppingList item4 = new ShoppingList("Pet Item", "P", null, 100.0, "9.0");
+        ShoppingList item1 = new ShoppingList("Food", "F", 9, 100.0, "bread");
+        ShoppingList item2 = new ShoppingList("Drink", "D", 9, 100.0, "pepsi");
+        ShoppingList item3 = new ShoppingList("Household Item", "H", 9, 100.0, "tissues");
+        ShoppingList item4 = new ShoppingList("Pet Item", "P", 9, 100.0, "pet food");
         sList.add(item1);
         sList.add(item2);
         sList.add(item3);
@@ -113,7 +112,7 @@ public class ShoppingListActivity extends AppCompatActivity{
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        spinnerTextView.setText(String.valueOf(adapter.getItem(position)));
+                        spinnerTextView.setText(String.valueOf(adapter.getItem(position).getItemName()));
                         dialog.dismiss();
                     }
                 });
