@@ -1,5 +1,6 @@
 package sg.edu.np.madassignment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,7 +47,8 @@ public class adviceActivityAdapter extends
         ShoppingList products_list = list_products.get(pos);
         holder.productName.setText(products_list.getItemName());
     }
-    public int getItemCount() {return list_products.size();}
+    public int getItemCount() {
+        return list_products.size();}
 
     public interface RecyclerViewClickListener {
         void onClick(View v, int pos);
