@@ -1,5 +1,6 @@
 package sg.edu.np.madassignment;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -8,11 +9,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,6 +24,9 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 
@@ -37,6 +43,7 @@ public class ShoppingListActivity extends AppCompatActivity{
 
         //Assigning of Variables
         spinnerTextView = findViewById(R.id.text_view);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         //Add items into ShoppingList
         addItemsIntoShoppingList(shoppingList);
@@ -46,6 +53,34 @@ public class ShoppingListActivity extends AppCompatActivity{
 
         //Build Searchable Spinner
         buildSearchableSpinner();
+
+        //Build Bottom Navigation Bar
+        //Set Home Page selected
+        bottomNavigationView.setSelectedItemId(R.id.shoppinglistpage);
+
+        //ItemSelectedListener
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.homepage:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.comparerpage:
+                        startActivity(new Intent(getApplicationContext(), CompareActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.shoppinglistpage:
+                        return true;
+                    case R.id.advicepage:
+                        startActivity(new Intent(getApplicationContext(), adviceActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                }
+                return false;
+            }
+        });
     }
 
     public ArrayList<ShoppingList> addItemsIntoShoppingList(ArrayList<ShoppingList> sList) {

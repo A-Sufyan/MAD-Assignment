@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homepage"
+        android:title="Home Page"
+        android:icon="@drawable/ic_baseline_home_24"/>
+
+    <item
+        android:id="@+id/comparerpage"
+        android:title="Comparer Page"
+        android:icon="@drawable/ic_baseline_calculate_24"/>
+
+    <item
+        android:id="@+id/shoppinglistpage"
+        android:title="Shopping List Page"
+        android:icon="@drawable/ic_baseline_checklist_24"/>
+
+    <item
+        android:id="@+id/advicepage"
+        android:title="Advice Page"
+        android:icon="@drawable/ic_baseline_question_answer_24"/>
+</menu>
