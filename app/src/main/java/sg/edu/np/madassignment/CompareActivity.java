@@ -1,18 +1,26 @@
 package sg.edu.np.madassignment;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
+
 import java.util.ArrayList;
 
 public class CompareActivity extends AppCompatActivity {
+
+    //Initialize variables
     ArrayList<ShoppingList> shoppingList; //To add food items into shopping list after comparison/calculation
     ArrayList<CompareItem> compareList = new ArrayList<CompareItem>();
     EditText brandInput;
@@ -24,10 +32,13 @@ public class CompareActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compare);
+
+        //Assign variables
         brandInput = findViewById(R.id.brandEditText);
         amountInput = findViewById(R.id.amountEditText);
         priceInput = findViewById(R.id.priceEditText);
         addtoCompareButton = findViewById(R.id.addtoCompare);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         RecyclerView recyclerViewCompare = findViewById(R.id.compareRecyclerView);
         CompareItemAdapter compareAdapter = new CompareItemAdapter(compareList);
@@ -45,6 +56,33 @@ public class CompareActivity extends AppCompatActivity {
                 temporaryItem.setBrand(brandInput.getText().toString());
                 compareList.add(temporaryItem);
                 compareAdapter.notifyDataSetChanged();
+            }
+        });
+
+        //Bottom Navigation Bar: Set Home Page selected
+        bottomNavigationView.setSelectedItemId(R.id.comparerpage);
+
+        //Bottom Navigation Bar: ItemSelectedListener
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.homepage:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.comparerpage:
+                        return true;
+                    case R.id.shoppinglistpage:
+                        startActivity(new Intent(getApplicationContext(), ShoppingListActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.advicepage:
+                        startActivity(new Intent(getApplicationContext(), adviceActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                }
+                return false;
             }
         });
     }

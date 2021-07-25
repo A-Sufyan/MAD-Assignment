@@ -1,22 +1,29 @@
 package sg.edu.np.madassignment;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
     /* TODO:
-        - Implement bottom navigation bar
+        - (Almost DONE) Implement bottom navigation bar
     *   - Allow CompareActivity to be able to add directly into shopping list
         - Fix shopppingListActivity (align stuff properly)
         - Add headers for shoppingList
         - Align title to center in adviceActivity, enclose list in box, align
           items to the left, increase font size of "choose product..."
-        - Implement Firebase to store items instead of local DB
+        - (DONE) Implement Firebase to store items instead of local DB
         - Clean up the UI
         - Icon on top of description, enclose entire thing in rectangle (main layout),
           change home --> App Name (WorthOrNot)
@@ -26,10 +33,13 @@ public class MainActivity extends AppCompatActivity {
      */
     private final static String TAG = "Main Activity";
 
+    //Initialize variables
     private ImageView GoToCalculator;
     private ImageView GoToShoppingList;
     private ImageView GoToAdvice;
     private Intent intent;
+    private NavigationBarView.OnItemSelectedListener selectedListener;
+    private NavigationBarView.OnItemReselectedListener reselectedListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +47,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.v(TAG, "On Create main Activity!");
 
+        //Assign variables
         GoToCalculator = findViewById(R.id.GoToCompare);
         GoToShoppingList = (ImageView) findViewById(R.id.GoToShoppingList);
         GoToAdvice = findViewById(R.id.GoToAdvice);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
+        //To Comparer Page
         GoToCalculator.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //To Shopping List Page
         GoToShoppingList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //To Advice Page
         GoToAdvice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,6 +83,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Bottom Navigation Bar: Set Home Page selected
+        bottomNavigationView.setSelectedItemId(R.id.homepage);
+
+        //Bottom Navigation Bar: ItemSelectedListener
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.homepage:
+                        return true;
+                    case R.id.comparerpage:
+                        startActivity(new Intent(getApplicationContext(), CompareActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.shoppinglistpage:
+                        startActivity(new Intent(getApplicationContext(), ShoppingListActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.advicepage:
+                        startActivity(new Intent(getApplicationContext(), adviceActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                }
+                return false;
+            }
+        });
     }
 
     @Override
