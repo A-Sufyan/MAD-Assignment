@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "896531594462",
+    "project_id": "grp3-mad-assignment",
+    "storage_bucket": "grp3-mad-assignment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896531594462:android:b398856364d61d0ff3564f",
+        "android_client_info": {
+          "package_name": "sg.edu.np.madassignment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "896531594462-siemajk95bo4c0b064lj8kek6cp6st4m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYrLBi3gIXTuDdiMcjlD9p7YyarvXhWUE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "896531594462-siemajk95bo4c0b064lj8kek6cp6st4m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
