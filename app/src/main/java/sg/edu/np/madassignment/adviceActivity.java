@@ -28,33 +28,6 @@ public class adviceActivity extends AppCompatActivity {
         ImageView productIcon = findViewById(R.id.adviceActivityProductIcon);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        //Bottom Navigation Bar: Set Home Page selected
-        bottomNavigationView.setSelectedItemId(R.id.advicepage);
-
-        //Bottom Navigation Bar: ItemSelectedListener
-        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.homepage:
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                    case R.id.comparerpage:
-                        startActivity(new Intent(getApplicationContext(), CompareActivity.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                    case R.id.shoppinglistpage:
-                        startActivity(new Intent(getApplicationContext(), ShoppingListActivity.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                    case R.id.advicepage:
-                        return true;
-                }
-                return false;
-            }
-        });
-
         Bundle recieveData = getIntent().getExtras();
         String recievedName = recieveData.getString("productname");
         String recievedDesc = recieveData.getString("productdesc");
