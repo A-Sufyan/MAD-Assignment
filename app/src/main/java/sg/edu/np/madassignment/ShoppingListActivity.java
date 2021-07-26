@@ -74,7 +74,7 @@ public class ShoppingListActivity extends AppCompatActivity{
                     case R.id.shoppinglistpage:
                         return true;
                     case R.id.advicepage:
-                        startActivity(new Intent(getApplicationContext(), adviceActivity.class));
+                        startActivity(new Intent(getApplicationContext(), adviceActivityHomepage.class));
                         overridePendingTransition(0, 0);
                         return true;
                 }
