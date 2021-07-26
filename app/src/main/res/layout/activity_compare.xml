@@ -162,13 +162,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="0dp"
-        app:itemBackground="@color/white"
+        app:itemBackground="@color/graypink"
         app:itemIconTint="@drawable/selector"
-        app:itemTextColor="@drawable/selector"
+        app:itemTextColor="@color/buttongray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/menu_navigation"/>
+        app:menu="@menu/menu_navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
