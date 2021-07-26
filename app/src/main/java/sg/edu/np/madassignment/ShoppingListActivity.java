@@ -31,7 +31,7 @@ import com.google.android.material.navigation.NavigationBarView;
 import java.util.ArrayList;
 
 public class ShoppingListActivity extends AppCompatActivity{
-    //Variable initialization
+    //Variable initialization TESSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSST
     TextView spinnerTextView;
     Dialog dialog;
     ArrayList<ShoppingList> shoppingList = new ArrayList<>();
