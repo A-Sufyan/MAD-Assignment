@@ -73,6 +73,7 @@ detailed, step-by-step operation of each feature will be underlined in the [User
   - Implemented Firebase
   - Designed Bottom Navigation Bar
   - Implemented Shopping List Page
+  - Added searchable spinner
  
 - Muhammad Fahmi Jumahat 👺 _(S10208183)_
   - Implemented Database
