@@ -6,6 +6,7 @@
 - [Features 💡](#features)
 - [User Guide ❓](#user-guide)
 - [Members 🎓](#members)
+- [Acknowledgements 🙏](#acknowledgements)
   
 ## Description 
 ℹ️**WorthOrNot** is a Mobile Application that aims to improve its users' experience when grocery shopping.
@@ -73,12 +74,21 @@ detailed, step-by-step operation of each feature will be underlined in the [User
   - Designed Bottom Navigation Bar
   - Implemented Shopping List Page
  
-- Muhammad Fahmi Jumahat _(S10208183)_
+- Muhammad Fahmi Jumahat 👺 _(S10208183)_
   - Implemented Database
   - Designed Pitch slides
+  - Implemented Shopping List Page
+  - Implemented Firebase
 
 - Tan Jing Yu 🙃 _(S10204382)_ 
   - Implemented Comparer Page
   - Implemented Advice Page
   - Designed UI
   - Wrote this file you're reading now
+
+## Acknowledgements
+🙏 Thank you to all who helped along the way
+  - Coolest gamer cher ~~Mr~~  Ben 🕹️ (for helping us even in the hospital) 
+  - [StackOverFlow](https://stackoverflow.com/)
+  - [Emojipedia](https://emojipedia.org/)
+  - [clemon](https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley)
