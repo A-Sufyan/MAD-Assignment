@@ -1,4 +1,4 @@
-package sg.edu.np.madassignment;
+package sg.edu.np.worthornot;
 
 import android.view.View;
 import android.widget.ImageView;

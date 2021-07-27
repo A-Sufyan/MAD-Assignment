@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="sg.edu.np.madassignment">
+    package="sg.edu.np.worthornot">
 
     <application
         android:allowBackup="true"
@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MADAssignment">
         <activity
-            android:name=".adviceActivityHomepage"
+            android:name="sg.edu.np.worthornot.adviceActivityHomepage"
             android:label="@string/title_activity_advice_homepage"
             android:theme="@style/Theme.MADAssignment.NoActionBar"></activity>
-        <activity android:name=".adviceActivity" />
-        <activity android:name=".CompareActivity" />
-        <activity android:name=".ShoppingListActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name="sg.edu.np.worthornot.adviceActivity" />
+        <activity android:name="sg.edu.np.worthornot.CompareActivity" />
+        <activity android:name="sg.edu.np.worthornot.ShoppingListActivity" />
+        <activity android:name="sg.edu.np.worthornot.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

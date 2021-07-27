@@ -1,13 +1,11 @@
-package sg.edu.np.madassignment;
+package sg.edu.np.worthornot;
 
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class CompareItemAdapter extends RecyclerView.Adapter

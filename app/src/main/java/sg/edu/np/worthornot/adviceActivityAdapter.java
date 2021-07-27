@@ -1,6 +1,5 @@
-package sg.edu.np.madassignment;
+package sg.edu.np.worthornot;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

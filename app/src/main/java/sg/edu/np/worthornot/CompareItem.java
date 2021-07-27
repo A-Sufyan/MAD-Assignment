@@ -1,4 +1,4 @@
-package sg.edu.np.madassignment;
+package sg.edu.np.worthornot;
 
 public class CompareItem {
     public String Brand;

@@ -1,7 +1,4 @@
-package sg.edu.np.madassignment;
-
-import android.graphics.drawable.Drawable;
-import android.media.Image;
+package sg.edu.np.worthornot;
 
 public class ShoppingList {
     public String itemName;

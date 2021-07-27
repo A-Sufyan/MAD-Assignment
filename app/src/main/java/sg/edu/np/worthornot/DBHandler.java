@@ -1,14 +1,12 @@
-package sg.edu.np.madassignment;
+package sg.edu.np.worthornot;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.icu.text.PluralRules;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class DBHandler extends SQLiteOpenHelper {
 
