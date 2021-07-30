@@ -28,7 +28,8 @@ import com.google.android.material.navigation.NavigationBarView;
 import java.util.ArrayList;
 
 public class ShoppingListActivity extends AppCompatActivity{
-    //Variable initialization
+
+// ------------------ Section for variable initialization  ---------------------------------------------
     TextView spinnerTextView;
     Dialog dialog;
     ArrayList<ShoppingList> shoppingList = new ArrayList<>();
@@ -39,17 +40,17 @@ public class ShoppingListActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shoppinglist);
 
-        //Assigning of Variables
+// ------------------ Section for variable assignment---------------------------------------------
         spinnerTextView = findViewById(R.id.text_view);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         //Add items into ShoppingList
         addItemsIntoShoppingList(shoppingList);
 
-        //Build RecyclerView
+        // Call method to Build RecyclerView
         buildRecyclerView();
 
-        //Build Searchable Spinner
+        // Call method to Build Searchable Spinner
         buildSearchableSpinner();
 
         //Build Bottom Navigation Bar
@@ -81,6 +82,7 @@ public class ShoppingListActivity extends AppCompatActivity{
         });
     }
 
+    // this code down here just for testing only right ?? (delete this comment)
     public ArrayList<ShoppingList> addItemsIntoShoppingList(ArrayList<ShoppingList> sList) {
         /*for (int i = 1; i < 5; i++){
             ShoppingList item = new ShoppingList("ItemName" + String.valueOf(i), "Item", null ,100.0, 9.0);
@@ -96,7 +98,7 @@ public class ShoppingListActivity extends AppCompatActivity{
         sList.add(item4);
         return sList;
     }
-
+// ------------------ Section for method to build recycler view ---------------------------------------------
     public void buildRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.recyclerView_ShoppingList);
         ShoppingListAdapter slAdapter = new ShoppingListAdapter(shoppingList);
@@ -108,7 +110,7 @@ public class ShoppingListActivity extends AppCompatActivity{
         recyclerView.addItemDecoration(dividerItemDecoration);
         recyclerView.setAdapter(slAdapter);
     }
-
+// ------------------ Section for method to build Spinner ---------------------------------------------
     public void buildSearchableSpinner() {
         for (int i = 0; i < shoppingList.size(); i++) {
             shoppingListItemName.add(shoppingList.get(i).itemName);
