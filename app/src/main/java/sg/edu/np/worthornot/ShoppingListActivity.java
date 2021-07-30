@@ -32,6 +32,7 @@ public class ShoppingListActivity extends AppCompatActivity{
     TextView spinnerTextView;
     Dialog dialog;
     ArrayList<ShoppingList> shoppingList = new ArrayList<>();
+    ArrayList<String> shoppingListItemName = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,6 +110,9 @@ public class ShoppingListActivity extends AppCompatActivity{
     }
 
     public void buildSearchableSpinner() {
+        for (int i = 0; i < shoppingList.size(); i++) {
+            shoppingListItemName.add(shoppingList.get(i).itemName);
+        }
         spinnerTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,7 +126,7 @@ public class ShoppingListActivity extends AppCompatActivity{
                 EditText editText = dialog.findViewById(R.id.edit_text);
                 ListView listView = dialog.findViewById(R.id.list_view);
 
-                ArrayAdapter<ShoppingList> adapter = new ArrayAdapter<>(ShoppingListActivity.this, android.R.layout.simple_list_item_1, shoppingList);
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(ShoppingListActivity.this, android.R.layout.simple_list_item_1, shoppingListItemName);
                 listView.setAdapter(adapter);
 
                 editText.addTextChangedListener(new TextWatcher() {
@@ -144,7 +148,7 @@ public class ShoppingListActivity extends AppCompatActivity{
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        spinnerTextView.setText(String.valueOf(adapter.getItem(position).getItemName()));
+                        spinnerTextView.setText(String.valueOf(adapter.getItem(position)));
                         dialog.dismiss();
                     }
                 });
