@@ -15,6 +15,5 @@
         android:gravity="left"
         android:padding="5dp"
         android:text="Product name here"
-        android:textAlignment="center"
         android:textSize="20sp" />
 </LinearLayout>
