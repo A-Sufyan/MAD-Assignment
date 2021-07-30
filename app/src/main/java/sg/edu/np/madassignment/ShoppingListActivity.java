@@ -48,7 +48,7 @@ public class ShoppingListActivity extends AppCompatActivity{
         //Add items into ShoppingList
         addItemsIntoShoppingList(shoppingList);
 
-        //Build RecyclerView
+        //Building RecyclerView
         buildRecyclerView();
 
         //Build Searchable Spinner
