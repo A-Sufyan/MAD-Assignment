@@ -18,12 +18,13 @@ public class adviceActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_advice);
 
-        //Assign variables
+// ------------------ Section for initializing variables ---------------------------------------------
         TextView productName = findViewById(R.id.adviceActivityitemTitle);
         TextView productDesc = findViewById(R.id.adviceActivityDescription);
         ImageView productIcon = findViewById(R.id.adviceActivityProductIcon);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
+// ------------------ Section for receiving Intent from adviceActivityHomepage ---------------------------------------------
         Bundle recieveData = getIntent().getExtras();
         String recievedName = recieveData.getString("productname");
         String recievedDesc = recieveData.getString("productdesc");
