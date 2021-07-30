@@ -19,13 +19,11 @@ public class MainActivity extends AppCompatActivity {
         - Fix shopppingListActivity (align stuff properly)
         - Add headers for shoppingList
         - Icon on top of description, enclose entire thing in rectangle (main layout),
-        - CompareActivity --> Compare items LR instead of UD
-          flip input to bottom, compare table to the top
         - Finish implementing Cloud Storage
      */
     private final static String TAG = "Main Activity";
 
-    //Initialize variables
+ // ------------------- Section to Initialize variables --------------------------------
     private ImageView GoToCalculator;
     private ImageView GoToShoppingList;
     private ImageView GoToAdvice;
@@ -39,13 +37,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.v(TAG, "On Create main Activity!");
 
-        //Assign variables
+// ------------------ Section for variable assignment --------------------------------------------------------
         GoToCalculator = findViewById(R.id.GoToCompare);
         GoToShoppingList = (ImageView) findViewById(R.id.GoToShoppingList);
         GoToAdvice = findViewById(R.id.GoToAdvice);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        //To Comparer Page
+// ------------------ Section for button to go to Compare Activity ---------------------------------------------
         GoToCalculator.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //To Shopping List Page
+// ------------------ Section for button to go to Shopping list Activity ---------------------------------------------
         GoToShoppingList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //To Advice Page
+// ------------------ Section for button to go to Advice Activity ---------------------------------------------
         GoToAdvice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+// ------------------ Section for bottom navigation bar ---------------------------------------------
         //Bottom Navigation Bar: Set Home Page selected
         bottomNavigationView.setSelectedItemId(R.id.homepage);
 
@@ -102,12 +101,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
     @Override
     protected void onStart(){
         super.onStart();
     }
-
     @Override
     protected void onResume(){
         super.onResume();
