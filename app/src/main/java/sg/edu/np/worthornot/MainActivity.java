@@ -15,17 +15,16 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
     /* TODO:
-        - (Almost DONE) Implement bottom navigation bar
     *   - Allow CompareActivity to be able to add directly into shopping list
         - Fix shopppingListActivity (align stuff properly)
+        *
         - Add headers for shoppingList
+        *
         - Align title to center in adviceActivity, enclose list in box, align
           items to the left, increase font size of "choose product..."
-        - (DONE) Implement Firebase to store items instead of local DB
-        - Clean up the UI
+          *
+          *
         - Icon on top of description, enclose entire thing in rectangle (main layout),
-          change home --> App Name (WorthOrNot)
-        - Maybe do splash page
         - CompareActivity --> Compare items LR instead of UD
           flip input to bottom, compare table to the top
      */
