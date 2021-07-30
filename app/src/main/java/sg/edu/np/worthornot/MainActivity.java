@@ -17,16 +17,11 @@ public class MainActivity extends AppCompatActivity {
     /* TODO:
     *   - Allow CompareActivity to be able to add directly into shopping list
         - Fix shopppingListActivity (align stuff properly)
-        *
         - Add headers for shoppingList
-        *
-        - Align title to center in adviceActivity, enclose list in box, align
-          items to the left, increase font size of "choose product..."
-          *
-          *
         - Icon on top of description, enclose entire thing in rectangle (main layout),
         - CompareActivity --> Compare items LR instead of UD
           flip input to bottom, compare table to the top
+        - Finish implementing Cloud Storage
      */
     private final static String TAG = "Main Activity";
 
