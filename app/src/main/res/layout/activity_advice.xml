@@ -27,6 +27,7 @@
         android:layout_marginTop="60dp"
         android:fontFamily="@font/raleway"
         android:text='"product name here"'
+        android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -50,6 +51,7 @@
         android:layout_height="311dp"
         android:fontFamily="@font/raleway"
         android:text="Insert entire description of the product inside this textview this text is long to see if everything fits inside here"
+        android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
