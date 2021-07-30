@@ -42,7 +42,8 @@ public class CompareActivity extends AppCompatActivity {
 
         RecyclerView recyclerViewCompare = findViewById(R.id.compareRecyclerView);
         CompareItemAdapter compareAdapter = new CompareItemAdapter(compareList);
-        LinearLayoutManager compareLayoutManager = new LinearLayoutManager(this);
+        LinearLayoutManager compareLayoutManager = new LinearLayoutManager
+                (this, LinearLayoutManager.HORIZONTAL, true);
         recyclerViewCompare.setLayoutManager(compareLayoutManager);
         recyclerViewCompare.setItemAnimator(new DefaultItemAnimator());
         recyclerViewCompare.setAdapter(compareAdapter);
