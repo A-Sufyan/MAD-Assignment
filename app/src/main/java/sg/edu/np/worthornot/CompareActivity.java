@@ -47,10 +47,10 @@ public class CompareActivity extends AppCompatActivity {
         LinearLayoutManager compareLayoutManager = new LinearLayoutManager
                 (this, LinearLayoutManager.HORIZONTAL, true);
         recyclerViewCompare.setLayoutManager(compareLayoutManager);
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL);
-        dividerItemDecoration.setDrawable(getResources().getDrawable(R.drawable.recyclerview_divider));
-        recyclerViewCompare.addItemDecoration(dividerItemDecoration);
         recyclerViewCompare.setItemAnimator(new DefaultItemAnimator());
+        /*DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL);
+        dividerItemDecoration.setDrawable(getResources().getDrawable(R.drawable.recyclerview_divider));
+        recyclerViewCompare.addItemDecoration(dividerItemDecoration);*/
         recyclerViewCompare.setAdapter(compareAdapter);
 
 //------------------   Section for setting onclickListener to add to compare button  -----------------------------------------------------------
