@@ -3,6 +3,7 @@ package sg.edu.np.worthornot;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,34 +21,39 @@ import java.util.ArrayList;
 
 public class CompareActivity extends AppCompatActivity {
 
-    //Initialize variables
+//------------------   Section to Initialize variables -----------------------------------------------------------
     ArrayList<ShoppingList> shoppingList; //To add food items into shopping list after comparison/calculation
     ArrayList<CompareItem> compareList = new ArrayList<CompareItem>();
     EditText brandInput;
     EditText amountInput;
     EditText priceInput;
     Button addtoCompareButton;
-
+//------------------   Section for onCreate()  -----------------------------------------------------------
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compare);
 
-        //Assign variables
+//------------------   Section for variable assignment  -----------------------------------------------------------
         brandInput = findViewById(R.id.brandEditText);
         amountInput = findViewById(R.id.amountEditText);
         priceInput = findViewById(R.id.priceEditText);
         addtoCompareButton = findViewById(R.id.addtoCompare);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
+//------------------   Section for building recyclerView  -----------------------------------------------------------
         RecyclerView recyclerViewCompare = findViewById(R.id.compareRecyclerView);
         CompareItemAdapter compareAdapter = new CompareItemAdapter(compareList);
         LinearLayoutManager compareLayoutManager = new LinearLayoutManager
                 (this, LinearLayoutManager.HORIZONTAL, true);
         recyclerViewCompare.setLayoutManager(compareLayoutManager);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL);
+        dividerItemDecoration.setDrawable(getResources().getDrawable(R.drawable.recyclerview_divider));
+        recyclerViewCompare.addItemDecoration(dividerItemDecoration);
         recyclerViewCompare.setItemAnimator(new DefaultItemAnimator());
         recyclerViewCompare.setAdapter(compareAdapter);
 
+//------------------   Section for setting onclickListener to add to compare button  -----------------------------------------------------------
         addtoCompareButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,6 +66,7 @@ public class CompareActivity extends AppCompatActivity {
             }
         });
 
+//------------------   Section for Bottom nav bar   -----------------------------------------------------------
         //Bottom Navigation Bar: Set Home Page selected
         bottomNavigationView.setSelectedItemId(R.id.comparerpage);
 
