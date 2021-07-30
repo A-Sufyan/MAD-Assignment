@@ -12,13 +12,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/raleway"
-        android:text="select item"
+        android:text="Select Item"
         android:textSize="20sp"
         android:textStyle="bold"
         tools:layout_conversion_absoluteHeight="24dp"
-        tools:layout_editor_absoluteY="16dp"
+        tools:layout_conversion_absoluteWidth="104dp"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_conversion_absoluteWidth="104dp" />
+        tools:layout_editor_absoluteY="16dp" />
 
     <EditText
         android:id="@+id/edit_text"

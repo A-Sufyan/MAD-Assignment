@@ -47,8 +47,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView_ShoppingList"
-            android:layout_width="307dp"
-            android:layout_height="wrap_content"
+            android:layout_width="370dp"
+            android:layout_height="484dp"
 
             android:layout_gravity="center_horizontal"
             android:background="@color/graypink"
