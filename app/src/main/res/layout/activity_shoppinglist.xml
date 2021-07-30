@@ -24,7 +24,7 @@
             android:layout_marginTop="60dp"
             android:fontFamily="@font/raleway"
             android:gravity="center"
-            android:text="list"
+            android:text="List"
             android:textSize="24sp"
             android:textStyle="bold" />
 
