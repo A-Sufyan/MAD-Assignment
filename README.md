@@ -24,7 +24,7 @@ maximise focus when shopping.
 - Icon and other vector elements are simply colored white ![#FFFFFF](https://via.placeholder.com/15/FFFFFF/000000?text=+) `#FFFFFF` to bring home the overall minimal and calm vibe of the app
  
 
-![image](https://user-images.githubusercontent.com/77566547/126974880-0aa00f52-b254-48eb-baf2-095f739eecca.png)
+![image](https://user-images.githubusercontent.com/77566547/127683453-9a7e0e83-bb17-43e1-bc0d-a40360f5f450.png)
 
 
 ## Features 
@@ -48,7 +48,7 @@ detailed, step-by-step operation of each feature will be underlined in the [User
   - This feature fulfills criteria #3 of the descirption as well, by letting a user navigate to a page where description of 
     products can be displayed to better inform a user's decision when purchasing products.
     
-    image of finalised advice thingy here pls 
+    ![image](https://user-images.githubusercontent.com/77566547/127683216-e52dead0-fdca-41e9-8bb6-e1b07d9b5041.png)
   
   #### Shopping List
   - This feature fulfills criteria #2, by allowing a user to plan their trip to the grocery store before they even 
@@ -66,18 +66,23 @@ detailed, step-by-step operation of each feature will be underlined in the [User
  ❓ A user first opens the app, and is navigated to the homepage. 3 large icons are available to easily be redirected to any of the 3 features available.
  The bottom nav bar is also available for users to navigate throughout the app.
  
- #### Usage of Compare page
+ #### **Usage of Compare page**
  1. User would come across 2 different brands of the same product _(ie. 2 apples from brand A and brand B )_
  2. Fill out the Brand field of one of the products _(Input "Brand A" into the Brand field)_
  3. Fill out the price and amount of the same product as above _(Input price and Weight of Apple from Brand A into respective fields)_
  4. Tap on the Add to Compare button, the product will appear in the list
- 5. Repeat steps 1-4 for the other product
- 6. The brand of the product, as well as the value (value = price / amount) will be displayed in the table
+ 5. Repeat steps 1-4 for the other product, or as many products as desired
+ 6. The brand of the product, as well as the value (value = price / amount) will be displayed in the table, from left to right
  7. User can then look between the products being compared and determine which product is most worth~~or not~~
 
- #### Usage of Advice Page
+ #### **Usage of Advice Page**
+ 1. User can scroll through the list of products found in this page
+ 2. Upon selection of any of the items, they will be redirected to a second page where the description of the item is 
+    elaborated on.
+ 3. User can then make a more informed decision of the product they are buying, after understanding more from the description.
  
- #### Usage of Shopping List Page
+ 
+ #### **Usage of Shopping List Page**
  
  
 
@@ -89,7 +94,7 @@ detailed, step-by-step operation of each feature will be underlined in the [User
   - Implemented Firebase
   - Designed Bottom Navigation Bar
   - Implemented Shopping List Page
-  - Added searchable spinner
+  - Implemented searchable spinner
  
 - Muhammad Fahmi Jumahat 👺 _(S10208183)_
   - Implemented Database
