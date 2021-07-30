@@ -63,7 +63,23 @@ detailed, step-by-step operation of each feature will be underlined in the [User
 
 
 ## User Guide 
- ❓
+ ❓ A user first opens the app, and is navigated to the homepage. 3 large icons are available to easily be redirected to any of the 3 features available.
+ The bottom nav bar is also available for users to navigate throughout the app.
+ 
+ #### Usage of Compare page
+ 1. User would come across 2 different brands of the same product _(ie. 2 apples from brand A and brand B )_
+ 2. Fill out the Brand field of one of the products _(Input "Brand A" into the Brand field)_
+ 3. Fill out the price and amount of the same product as above _(Input price and Weight of Apple from Brand A into respective fields)_
+ 4. Tap on the Add to Compare button, the product will appear in the list
+ 5. Repeat steps 1-4 for the other product
+ 6. The brand of the product, as well as the value (value = price / amount) will be displayed in the table
+ 7. User can then look between the products being compared and determine which product is most worth~~or not~~
+
+ #### Usage of Advice Page
+ 
+ #### Usage of Shopping List Page
+ 
+ 
 
 ## Members 
 🎓 Detailed here are the members of the team, and their contributions:
