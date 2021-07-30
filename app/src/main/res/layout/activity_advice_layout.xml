@@ -2,6 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="20dp"
     android:background="@color/graypink"
     android:orientation="vertical">
 
@@ -9,11 +11,12 @@
         android:id="@+id/advice_layoutProductName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="left"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="0dp"
         android:fontFamily="@font/raleway"
-        android:gravity="center"
+        android:gravity="left"
         android:padding="5dp"
         android:text="Product name here"
-        android:textAlignment="center"
         android:textSize="20sp" />
 </LinearLayout>

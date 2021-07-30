@@ -3,6 +3,7 @@ package sg.edu.np.worthornot;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -25,15 +26,16 @@ public class adviceActivityHomepage extends AppCompatActivity {
     DBHandler dbHandler = new DBHandler(
             this,null,null,1
     );
+// -------------------------------- Section for oncreate() ------------------------------------------------------------
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.v(TAG, "On create AdviceActivityHomepage");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advice_homepage);
-
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
+// -------------------------------- Section to build recycler view ------------------------------------------------------------
         myList = dbHandler.getListOfShoppingList();
         setOnClickListener();
         RecyclerView recyclerView = findViewById(R.id.adviceActivityRecyclerView);
@@ -41,12 +43,15 @@ public class adviceActivityHomepage extends AppCompatActivity {
         LinearLayoutManager myLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(myLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+        dividerItemDecoration.setDrawable(getResources().getDrawable(R.drawable.recyclerview_divider));
+        recyclerView.addItemDecoration(dividerItemDecoration);
         recyclerView.setAdapter(myAdapter);
 
-        //Bottom Navigation Bar: Set Home Page selected
+// ------------------------------- Bottom Navigation Bar: Set Home Page selected --------------------------------------------------------------
         bottomNavigationView.setSelectedItemId(R.id.advicepage);
 
-        //Bottom Navigation Bar: ItemSelectedListener
+//------------------------------- Bottom Navigation Bar: ItemSelectedListener ---------------------------------------------------------------------------------------------
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -70,6 +75,9 @@ public class adviceActivityHomepage extends AppCompatActivity {
             }
         });
     }
+// ------------------------------- Methods -----------------------------------------------------------------------------
+
+// ------------------------------- Method to set on click listener for recyclerview --------------------------------------
     private void setOnClickListener() {
         listener = new adviceActivityAdapter.RecyclerViewClickListener() {
             @Override
@@ -80,6 +88,7 @@ public class adviceActivityHomepage extends AppCompatActivity {
 
         };
     }
+// ------------------------------- Method when recyclerview listener is clicked --------------------------------------
 
     private void ClickedButton(int position) {
         Bundle extras = new Bundle();

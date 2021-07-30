@@ -11,11 +11,11 @@
         android:id="@+id/adviceActivityDescriptionTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="76dp"
         android:fontFamily="@font/raleway"
-        android:text="description"
+        android:text="Description"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/adviceActivityProductIcon" />
@@ -24,12 +24,13 @@
         android:id="@+id/adviceActivityitemTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="60dp"
         android:fontFamily="@font/raleway"
         android:text='"product name here"'
+        android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.281"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,14 +47,16 @@
 
     <TextView
         android:id="@+id/adviceActivityDescription"
-        android:layout_width="307dp"
-        android:layout_height="wrap_content"
+        android:layout_width="327dp"
+        android:layout_height="311dp"
         android:fontFamily="@font/raleway"
         android:text="Insert entire description of the product inside this textview this text is long to see if everything fits inside here"
+        android:textAlignment="center"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/adviceActivityDescriptionTitle"
-        app:layout_constraintVertical_bias="0.156" />
+        app:layout_constraintVertical_bias="0.467" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
