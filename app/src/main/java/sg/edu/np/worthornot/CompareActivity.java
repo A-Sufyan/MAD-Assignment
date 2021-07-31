@@ -101,17 +101,17 @@ public class CompareActivity extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.homepage:
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        overridePendingTransition(0, 0);
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                         return true;
                     case R.id.comparerpage:
                         return true;
                     case R.id.shoppinglistpage:
                         startActivity(new Intent(getApplicationContext(), ShoppingListActivity.class));
-                        overridePendingTransition(0, 0);
+                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                         return true;
                     case R.id.advicepage:
                         startActivity(new Intent(getApplicationContext(), adviceActivityHomepage.class));
-                        overridePendingTransition(0, 0);
+                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                         return true;
                 }
                 return false;
