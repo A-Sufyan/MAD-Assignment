@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -64,8 +63,18 @@ public class CompareActivity extends AppCompatActivity {
         addtoCompareButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (TextUtils.isEmpty(brandInput.getText().toString())) {
+                if (brandInput.getText().toString().equals("")) {
+                    Toast.makeText(CompareActivity.this,
+                            "Brand field is empty!", Toast.LENGTH_SHORT).show();
 
+                }
+                else if(priceInput.getText().toString().equals("")){
+                    Toast.makeText(CompareActivity.this,
+                            "Price field is empty!", Toast.LENGTH_SHORT).show();
+                }
+                else if (amountInput.getText().toString().equals("")) {
+                    Toast.makeText(CompareActivity.this,
+                            "Amount field is empty!", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     CompareItem temporaryItem = new CompareItem();
@@ -74,8 +83,10 @@ public class CompareActivity extends AppCompatActivity {
                     temporaryItem.setBrand(brandInput.getText().toString());
                     compareList.add(temporaryItem);
                     compareAdapter.notifyDataSetChanged();
-                    Toast.makeText(CompareActivity.this, "Added to Compare!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CompareActivity.this,
+                            "Added to Compare!", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
 

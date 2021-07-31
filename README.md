@@ -19,13 +19,11 @@ This improvement will be attained by fulfilling these 3 criteria:
 🎨This application is built with an overall minimalist aesthetic in mind in order to reduce clutter and 
 maximise focus when shopping. 
 - [Raleway](https://fonts.google.com/specimen/Raleway) font is used for its elegance and great readability. 
-- Background color used throughout the app is a gray color ![#D7C8CA](https://via.placeholder.com/15/D7C8CA/000000?text=+) `#D7C8CA` for its simplicity 
-- Text color is a darker gray ![#7A7A7A](https://via.placeholder.com/15/7A7A7A/000000?text=+) `#7A7A7A` to contrast background and improve readability. 
-- Icon and other vector elements are simply colored white ![#FFFFFF](https://via.placeholder.com/15/FFFFFF/000000?text=+) `#FFFFFF` to bring home the overall minimal and calm vibe of the app
- 
+- Background color used throughout the app is a gray color ![#D6CFCB](https://via.placeholder.com/15/D6CFCB/000000?text=+) `#D6CFCB` for its simplicity 
+- Text color, and icons is a darker gray ![#503d42](https://via.placeholder.com/15/503d42/000000?text=+) `#503d42` to contrast background and improve readability. 
+- Button elements are colored with a dark blue ![#16697A](https://via.placeholder.com/15/16697A/000000?text=+) `#16697A` to bring home the overall minimal and calm vibe of the app
 
-![image](https://user-images.githubusercontent.com/77566547/127683453-9a7e0e83-bb17-43e1-bc0d-a40360f5f450.png)
-
+![image](https://user-images.githubusercontent.com/77566547/127747409-ae933ee0-00fd-475a-be83-6b11e178cc39.png)
 
 ## Features 
 💡Below are brief descriptions of the features implemented into this application,
@@ -35,27 +33,31 @@ detailed, step-by-step operation of each feature will be underlined in the [User
   - The application can be smoothly navigated across the 3 main pages, and homepage, with this navigation
     bar located at the bottom of the screen.
     
-    ![image](https://user-images.githubusercontent.com/77566547/126971994-a3c6a3a4-4ffe-4b86-8d15-c079b385bf67.png)
+    ![image](https://user-images.githubusercontent.com/77566547/127747521-84807c93-9c5e-4f06-880a-d08ae1e7fc53.png)
     
   #### Comparer
   - This feature fulfills criteria #3 and #1 under the descirption. It allows users to add in the price and amount of a product
     they find during a grocery shopping trip, and quickly compare them against each other to determine the product
     with best value, therefore saving on both time and money. The product can also be directly added from the Compare feature,
-    into the Shopping List feature.
+    into the Shopping List feature. 
     
-    ![image](https://user-images.githubusercontent.com/77566547/126972143-0b876e65-d4c0-4e79-936c-2844a86a1570.png)
+    In practice, a user could come across 2 different boxes of cereal from 2 different brands, 
+    Brand A and B for example. Brand A provides 500g of cereal at $4.50, whereas Brand B provides 800g for $11.90, 
+    
+![image](https://user-images.githubusercontent.com/77566547/127747574-73d0df95-288c-46e4-8b38-9450f22fde3d.png)
 
   #### Advice
   - This feature fulfills criteria #3 of the descirption as well, by letting a user navigate to a page where description of 
     products can be displayed to better inform a user's decision when purchasing products.
     
-    ![image](https://user-images.githubusercontent.com/77566547/127683216-e52dead0-fdca-41e9-8bb6-e1b07d9b5041.png)
+    ![image](https://user-images.githubusercontent.com/77566547/127747582-05e270b9-82c9-48ad-b282-2739277c44e0.png)
   
   #### Shopping List
   - This feature fulfills criteria #2, by allowing a user to plan their trip to the grocery store before they even 
-    leave the house. 
+    leave the house. The items stored in the list are inputted completely up to the user's exact specifications, with a dynamically
+    changing icon according to the type of product.
       
-     image of finalised shoppinglist thingy here pls 
+     ![image](https://user-images.githubusercontent.com/77566547/127745767-d6659f6b-1f02-4ea8-90f3-9cd6367b59f2.png)
   
   #### Firebase Cloud Storage 
   - Firebase is a Google application software that enables mobile app developers to develop iOS, 
@@ -75,8 +77,15 @@ detailed, step-by-step operation of each feature will be underlined in the [User
  5. Repeat steps 1-4 for the other product, or as many products as desired
  6. The brand of the product, as well as the value (value = price / amount) will be displayed in the table, from left to right
  7. User can then look between the products being compared and determine which product is most worth~~or not~~
- 8. User finally can choose to tap on the "Add to Shopping List" button.
  
+ +  **Additionally,** any of the products added into the Compare table can be added directly to the shopping list if desired. This can be 
+    done by tapping on the "Add to Shopping List" button found on each product listed in the Compare table. 
+    
+    1. All previously filled fields by user (Price, Brand and Amount) will be automatically filled, and can still be editted.
+    2. User can input additional information needed for a shopping list such as the Name and Quantity to be purchased 
+    3. Upon tapping the "Add to Shopping List" button, user will be redirected to the Shopping List page where the product is 
+       saved.
+    
  #### **Usage of Advice Page**
  1. User can scroll through the list of products found in this page
  2. Upon selection of any of the items, they will be redirected to a second page where the description of the item is 
@@ -85,8 +94,11 @@ detailed, step-by-step operation of each feature will be underlined in the [User
  
  
  #### **Usage of Shopping List Page**
- 
- 
+ 1. User first taps on the "+" icon on the top left corner, where a page will appear to take in user inputs
+ 2. User can input details of the product (Name, Quantity, Brand, Price etc.)
+ 3. Tap on the button located on bottom of the screen "Add to Shopping List"
+ 4. Item will appear in the original page. User can then check off the items with the built in check box as they shop 
+    in real life.
 
 ## Members 
 🎓 Detailed here are the members of the team, and their contributions:
@@ -113,7 +125,7 @@ detailed, step-by-step operation of each feature will be underlined in the [User
 
 ## Acknowledgements
 🙏 Thank you to all who helped along the way
-  - Coolest gamer cher ~~Mr~~  Ben 🕹️ (for helping us even in the hospital) 
+  - Coolest gamer cher ~~Mr~~  Ben 🕹️ (for helping us even in the hospital) _we hope your foot is better_
   - [StackOverFlow](https://stackoverflow.com/)
   - [Emojipedia](https://emojipedia.org/)
   - [clemon](https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley)
