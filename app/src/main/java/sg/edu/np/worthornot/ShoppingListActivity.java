@@ -34,9 +34,19 @@ public class ShoppingListActivity extends AppCompatActivity{
     Dialog dialog;
     ArrayList<ShoppingList> shoppingList = new ArrayList<>();
     ArrayList<String> shoppingListItemName = new ArrayList<>();
+    ShoppingList temporaryItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (getIntent().getExtras() != null){
+            Bundle recieveData = getIntent().getExtras();
+            temporaryItem.setItemName(recieveData.getString("newName"));
+            temporaryItem.setItemCategory(recieveData.getString("newCategory"));
+            temporaryItem.setItemDescription(recieveData.getString("newDescription"));
+            temporaryItem.setItemAmount(recieveData.getInt("newAmount"));
+            temporaryItem.setItemPrice(recieveData.getDouble("newPrice"));
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shoppinglist);
 
