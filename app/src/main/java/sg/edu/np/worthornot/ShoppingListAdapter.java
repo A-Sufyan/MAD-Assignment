@@ -41,22 +41,17 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListViewHo
         }
         else if (shoppingItem.getItemCategory().equals("D")) {
             holder.itemName.setText(shoppingItem.getItemName());
-            holder.itemAmount.setText('$' + String.valueOf(String.format("%.2f", shoppingItem.getItemPrice())));
-            holder.itemPrice.setText(String.valueOf(shoppingItem.getItemAmount()) + " (g)");
+            holder.itemAmount.setText("Price: $" + String.valueOf(String.format("%.2f", shoppingItem.getItemPrice())));
+            holder.itemPrice.setText(String.valueOf("Quantity: x"+shoppingItem.getItemAmount()));
             holder.itemImage.setImageResource(R.drawable.ic_drinks);
         }
         else if (shoppingItem.getItemCategory().equals("H")) {
             holder.itemName.setText(shoppingItem.getItemName());
-            holder.itemAmount.setText('$' + String.valueOf(String.format("%.2f", shoppingItem.getItemPrice())));
-            holder.itemPrice.setText(String.valueOf(shoppingItem.getItemAmount()) + " (g)");
+            holder.itemAmount.setText("Price: $" + String.valueOf(String.format("%.2f", shoppingItem.getItemPrice())));
+            holder.itemPrice.setText(String.valueOf("Quantity: x"+shoppingItem.getItemAmount()));
             holder.itemImage.setImageResource(R.drawable.ic_household_items);
         }
-        else if (shoppingItem.getItemCategory().equals("P")) {
-            holder.itemName.setText(shoppingItem.getItemName());
-            holder.itemAmount.setText('$' + String.valueOf(String.format("%.2f", shoppingItem.getItemPrice())));
-            holder.itemPrice.setText(String.valueOf(shoppingItem.getItemAmount()) + " (g)");
-            holder.itemImage.setImageResource(R.drawable.ic_pet_items);
-        }
+
         else {
             holder.itemName.setText("Item not found!");
         }
