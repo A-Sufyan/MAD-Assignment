@@ -46,8 +46,8 @@ detailed, step-by-step operation of each feature will be underlined in the [User
     In practice, a user could come across 2 different boxes of cereal from 2 different brands, 
     Brand A and B for example. Brand A provides 500g of cereal at $4.50, whereas Brand B provides 800g for $11.90, 
     
-    ![image](https://user-images.githubusercontent.com/77566547/126972143-0b876e65-d4c0-4e79-936c-2844a86a1570.png)
-
+  ![image](https://user-images.githubusercontent.com/77566547/127745824-c1091134-9004-4393-8252-a0f670b06a34.png)
+  
   #### Advice
   - This feature fulfills criteria #3 of the descirption as well, by letting a user navigate to a page where description of 
     products can be displayed to better inform a user's decision when purchasing products.
@@ -56,9 +56,10 @@ detailed, step-by-step operation of each feature will be underlined in the [User
   
   #### Shopping List
   - This feature fulfills criteria #2, by allowing a user to plan their trip to the grocery store before they even 
-    leave the house. 
+    leave the house. The items stored in the list are inputted completely up to the user's exact specifications, with a dynamically
+    changing icon according to the type of product.
       
-     image of finalised shoppinglist thingy here pls 
+     ![image](https://user-images.githubusercontent.com/77566547/127745767-d6659f6b-1f02-4ea8-90f3-9cd6367b59f2.png)
   
   #### Firebase Cloud Storage 
   - Firebase is a Google application software that enables mobile app developers to develop iOS, 
