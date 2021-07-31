@@ -40,16 +40,16 @@ public class AddToShoppingListActivity extends AppCompatActivity {
         Price = findViewById(R.id.addToShoppingList_PriceInput);
         addToShoppingList = findViewById(R.id.addtoShoppingList_Button);
 
-// ------------------ Section for receiving Intent from CompareActivity ---------------------------------------------
-        Bundle recieveData = getIntent().getExtras();
-        receivedBrand = recieveData.getString("productBrand");
-        receivedPrice = String.valueOf(recieveData.getDouble("productPrice"));
-        receivedQuantity = String.valueOf(recieveData.getInt("productQuantity"));
-
-// ------------------ Section for setting received values into EditTexts ---------------------------------------------
-        Brand.setText(receivedBrand);
-        Price.setText(receivedPrice);
-        Quantity.setText(receivedQuantity);
+// ------------------ Section for receiving Intent if adding from CompareActivity ---------------------------------------------
+        if (getIntent().getExtras().containsKey("productBrand")){
+            Bundle recieveData = getIntent().getExtras();
+            receivedBrand = recieveData.getString("productBrand");
+            receivedPrice = String.valueOf(recieveData.getDouble("productPrice"));
+            receivedQuantity = String.valueOf(recieveData.getInt("productQuantity"));
+            Brand.setText(receivedBrand);
+            Price.setText(receivedPrice);
+            Quantity.setText(receivedQuantity);
+        }
 
 // ------------------ Section for setting category and description ---------------------------------------------
         if (Category.getText().toString().toUpperCase() == "F"){
