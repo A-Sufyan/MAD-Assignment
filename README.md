@@ -19,13 +19,11 @@ This improvement will be attained by fulfilling these 3 criteria:
 🎨This application is built with an overall minimalist aesthetic in mind in order to reduce clutter and 
 maximise focus when shopping. 
 - [Raleway](https://fonts.google.com/specimen/Raleway) font is used for its elegance and great readability. 
-- Background color used throughout the app is a gray color ![#D7C8CA](https://via.placeholder.com/15/D7C8CA/000000?text=+) `#D7C8CA` for its simplicity 
-- Text color is a darker gray ![#7A7A7A](https://via.placeholder.com/15/7A7A7A/000000?text=+) `#7A7A7A` to contrast background and improve readability. 
-- Icon and other vector elements are simply colored white ![#FFFFFF](https://via.placeholder.com/15/FFFFFF/000000?text=+) `#FFFFFF` to bring home the overall minimal and calm vibe of the app
- 
+- Background color used throughout the app is a gray color ![#D6CFCB](https://via.placeholder.com/15/D6CFCB/000000?text=+) `#D6CFCB` for its simplicity 
+- Text color, and icons is a darker gray ![#503d42](https://via.placeholder.com/15/503d42/000000?text=+) `#503d42` to contrast background and improve readability. 
+- Button elements are colored with a dark blue ![#16697A](https://via.placeholder.com/15/16697A/000000?text=+) `#16697A` to bring home the overall minimal and calm vibe of the app
 
-![image](https://user-images.githubusercontent.com/77566547/127683453-9a7e0e83-bb17-43e1-bc0d-a40360f5f450.png)
-
+![image](https://user-images.githubusercontent.com/77566547/127747409-ae933ee0-00fd-475a-be83-6b11e178cc39.png)
 
 ## Features 
 💡Below are brief descriptions of the features implemented into this application,
@@ -35,7 +33,7 @@ detailed, step-by-step operation of each feature will be underlined in the [User
   - The application can be smoothly navigated across the 3 main pages, and homepage, with this navigation
     bar located at the bottom of the screen.
     
-    ![image](https://user-images.githubusercontent.com/77566547/126971994-a3c6a3a4-4ffe-4b86-8d15-c079b385bf67.png)
+    ![image](https://user-images.githubusercontent.com/77566547/127747521-84807c93-9c5e-4f06-880a-d08ae1e7fc53.png)
     
   #### Comparer
   - This feature fulfills criteria #3 and #1 under the descirption. It allows users to add in the price and amount of a product
@@ -46,13 +44,13 @@ detailed, step-by-step operation of each feature will be underlined in the [User
     In practice, a user could come across 2 different boxes of cereal from 2 different brands, 
     Brand A and B for example. Brand A provides 500g of cereal at $4.50, whereas Brand B provides 800g for $11.90, 
     
-  ![image](https://user-images.githubusercontent.com/77566547/127745824-c1091134-9004-4393-8252-a0f670b06a34.png)
-  
+![image](https://user-images.githubusercontent.com/77566547/127747574-73d0df95-288c-46e4-8b38-9450f22fde3d.png)
+
   #### Advice
   - This feature fulfills criteria #3 of the descirption as well, by letting a user navigate to a page where description of 
     products can be displayed to better inform a user's decision when purchasing products.
     
-    ![image](https://user-images.githubusercontent.com/77566547/127683216-e52dead0-fdca-41e9-8bb6-e1b07d9b5041.png)
+    ![image](https://user-images.githubusercontent.com/77566547/127747582-05e270b9-82c9-48ad-b282-2739277c44e0.png)
   
   #### Shopping List
   - This feature fulfills criteria #2, by allowing a user to plan their trip to the grocery store before they even 
