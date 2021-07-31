@@ -47,7 +47,6 @@ public class ShoppingListActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shoppinglist);
 // ------------------ Section for receiving intent from addtoShoppingList activity ---------------------------------------------
-
         if (getIntent().getExtras() != null){
             Bundle recieveData = getIntent().getExtras();
             temporaryItem.setItemName(recieveData.getString("newName"));
@@ -70,7 +69,7 @@ public class ShoppingListActivity extends AppCompatActivity{
         });
 
         //Add items into ShoppingList
-        addItemsIntoShoppingList(shoppingList);
+        addItemsIntoShoppingList(shoppingList, temporaryItem);
 
         // Call method to Build RecyclerView
         buildRecyclerView();
@@ -108,7 +107,7 @@ public class ShoppingListActivity extends AppCompatActivity{
     }
 
     // this code down here just for testing only right ?? (delete this comment)
-    public ArrayList<ShoppingList> addItemsIntoShoppingList(ArrayList<ShoppingList> sList) {
+    public ArrayList<ShoppingList> addItemsIntoShoppingList(ArrayList<ShoppingList> sList, ShoppingList addedItem) {
         /*for (int i = 1; i < 5; i++){
             ShoppingList item = new ShoppingList("ItemName" + String.valueOf(i), "Item", null ,100.0, 9.0);
             sList.add(item);
@@ -121,6 +120,9 @@ public class ShoppingListActivity extends AppCompatActivity{
         sList.add(item2);
         sList.add(item3);
         sList.add(item4);
+        if (addedItem != null) {
+            sList.add(addedItem);
+        }
         return sList;
     }
 // ------------------ Section for method to build recycler view ---------------------------------------------
