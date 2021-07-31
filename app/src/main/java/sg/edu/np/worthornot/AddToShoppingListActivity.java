@@ -38,6 +38,7 @@ public class AddToShoppingListActivity extends AppCompatActivity {
         Category = findViewById(R.id.addToShoppingList_CategoryInput);
         Quantity = findViewById(R.id.addToShoppingList_QuantityInput);
         Price = findViewById(R.id.addToShoppingList_PriceInput);
+        addToShoppingList = findViewById(R.id.addtoShoppingList_Button);
 
 // ------------------ Section for receiving Intent from CompareActivity ---------------------------------------------
         Bundle recieveData = getIntent().getExtras();

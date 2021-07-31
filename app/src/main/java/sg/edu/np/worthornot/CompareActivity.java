@@ -121,8 +121,7 @@ public class CompareActivity extends AppCompatActivity {
         extras.putString("productBrand", compareList.get(position).getBrand());
         extras.putDouble("productPrice", compareList.get(position).getPrice());
         extras.putInt("productQuantity", compareList.get(position).getAmount());
-
-        Intent intent = new Intent(getApplicationContext(), AddToShoppingListActivity.class);
+        Intent intent = new Intent(CompareActivity.this, AddToShoppingListActivity.class);
         intent.putExtras(extras);
         startActivity(intent);
     }
