@@ -41,10 +41,13 @@ detailed, step-by-step operation of each feature will be underlined in the [User
   - This feature fulfills criteria #3 and #1 under the descirption. It allows users to add in the price and amount of a product
     they find during a grocery shopping trip, and quickly compare them against each other to determine the product
     with best value, therefore saving on both time and money. The product can also be directly added from the Compare feature,
-    into the Shopping List feature.
+    into the Shopping List feature. 
     
-    ![image](https://user-images.githubusercontent.com/77566547/126972143-0b876e65-d4c0-4e79-936c-2844a86a1570.png)
-
+    In practice, a user could come across 2 different boxes of cereal from 2 different brands, 
+    Brand A and B for example. Brand A provides 500g of cereal at $4.50, whereas Brand B provides 800g for $11.90, 
+    
+  ![image](https://user-images.githubusercontent.com/77566547/127745824-c1091134-9004-4393-8252-a0f670b06a34.png)
+  
   #### Advice
   - This feature fulfills criteria #3 of the descirption as well, by letting a user navigate to a page where description of 
     products can be displayed to better inform a user's decision when purchasing products.
@@ -53,9 +56,10 @@ detailed, step-by-step operation of each feature will be underlined in the [User
   
   #### Shopping List
   - This feature fulfills criteria #2, by allowing a user to plan their trip to the grocery store before they even 
-    leave the house. 
+    leave the house. The items stored in the list are inputted completely up to the user's exact specifications, with a dynamically
+    changing icon according to the type of product.
       
-     image of finalised shoppinglist thingy here pls 
+     ![image](https://user-images.githubusercontent.com/77566547/127745767-d6659f6b-1f02-4ea8-90f3-9cd6367b59f2.png)
   
   #### Firebase Cloud Storage 
   - Firebase is a Google application software that enables mobile app developers to develop iOS, 
@@ -75,8 +79,15 @@ detailed, step-by-step operation of each feature will be underlined in the [User
  5. Repeat steps 1-4 for the other product, or as many products as desired
  6. The brand of the product, as well as the value (value = price / amount) will be displayed in the table, from left to right
  7. User can then look between the products being compared and determine which product is most worth~~or not~~
- 8. User finally can choose to tap on the "Add to Shopping List" button.
  
+ +  **Additionally,** any of the products added into the Compare table can be added directly to the shopping list if desired. This can be 
+    done by tapping on the "Add to Shopping List" button found on each product listed in the Compare table. 
+    
+    1. All previously filled fields by user (Price, Brand and Amount) will be automatically filled, and can still be editted.
+    2. User can input additional information needed for a shopping list such as the Name and Quantity to be purchased 
+    3. Upon tapping the "Add to Shopping List" button, user will be redirected to the Shopping List page where the product is 
+       saved.
+    
  #### **Usage of Advice Page**
  1. User can scroll through the list of products found in this page
  2. Upon selection of any of the items, they will be redirected to a second page where the description of the item is 
@@ -85,8 +96,11 @@ detailed, step-by-step operation of each feature will be underlined in the [User
  
  
  #### **Usage of Shopping List Page**
- 
- 
+ 1. User first taps on the "+" icon on the top left corner, where a page will appear to take in user inputs
+ 2. User can input details of the product (Name, Quantity, Brand, Price etc.)
+ 3. Tap on the button located on bottom of the screen "Add to Shopping List"
+ 4. Item will appear in the original page. User can then check off the items with the built in check box as they shop 
+    in real life.
 
 ## Members 
 🎓 Detailed here are the members of the team, and their contributions:
@@ -113,7 +127,7 @@ detailed, step-by-step operation of each feature will be underlined in the [User
 
 ## Acknowledgements
 🙏 Thank you to all who helped along the way
-  - Coolest gamer cher ~~Mr~~  Ben 🕹️ (for helping us even in the hospital) 
+  - Coolest gamer cher ~~Mr~~  Ben 🕹️ (for helping us even in the hospital) _we hope your foot is better_
   - [StackOverFlow](https://stackoverflow.com/)
   - [Emojipedia](https://emojipedia.org/)
   - [clemon](https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley)
