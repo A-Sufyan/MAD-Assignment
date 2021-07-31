@@ -9,14 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MADAssignment">
+        <activity android:name=".AddToShoppingListActivity"></activity>
         <activity
-            android:name="sg.edu.np.worthornot.adviceActivityHomepage"
+            android:name=".adviceActivityHomepage"
             android:label="@string/title_activity_advice_homepage"
-            android:theme="@style/Theme.MADAssignment.NoActionBar"></activity>
-        <activity android:name="sg.edu.np.worthornot.adviceActivity" />
-        <activity android:name="sg.edu.np.worthornot.CompareActivity" />
-        <activity android:name="sg.edu.np.worthornot.ShoppingListActivity" />
-        <activity android:name="sg.edu.np.worthornot.MainActivity">
+            android:theme="@style/Theme.MADAssignment.NoActionBar" />
+        <activity android:name=".adviceActivity" />
+        <activity android:name=".CompareActivity" />
+        <activity android:name=".ShoppingListActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

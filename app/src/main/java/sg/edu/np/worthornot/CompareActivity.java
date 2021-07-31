@@ -117,6 +117,14 @@ public class CompareActivity extends AppCompatActivity {
 
 // ------------------------------- Method when recyclerview listener is clicked --------------------------------------
     private void ClickedAddToShoppingListButton(int position){
+        Bundle extras = new Bundle();
+        extras.putString("productBrand", compareList.get(position).getBrand());
+        extras.putDouble("productPrice", compareList.get(position).getPrice());
+        extras.putInt("productAmount", compareList.get(position).getAmount());
+
+        Intent intent = new Intent(getApplicationContext(), );
+        intent.putExtras(extras);
+        startActivity(intent);
     }
 
     @Override
