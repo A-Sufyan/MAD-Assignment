@@ -53,24 +53,14 @@
                 android:text="Reset"
                 android:textColor="@color/colorPrimary"
                 app:backgroundTint="@color/buttonColor" />
-        </LinearLayout>
 
-        <TextView
-            android:id="@+id/text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="15dp"
-            android:background="@color/buttonColor"
-            android:drawableEnd="@drawable/ic_arrow"
-            android:fontFamily="@font/raleway"
-            android:gravity="center_vertical"
-            android:hint="choose item"
-            android:padding="12dp"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF"
-            android:textStyle="italic"
-            app:drawableTint="#FFFFFF" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="25dp"
+                android:text="(Swipe right to delete item.)"
+                android:textColor="@color/textColor"/>
+        </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView_ShoppingList"

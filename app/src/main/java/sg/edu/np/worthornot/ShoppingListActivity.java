@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -60,11 +61,11 @@ public class ShoppingListActivity extends AppCompatActivity{
         setContentView(R.layout.activity_shoppinglist);
 
 // ------------------ Section for variable assignment---------------------------------------------
-        spinnerTextView = findViewById(R.id.text_view);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         manualAddToShoppingList = findViewById(R.id.manualAddToShoppingListButton);
         resetButton = findViewById(R.id.resetButton);
 
+// ------------------ Section for user add to Shopping List ---------------------------------------------
         manualAddToShoppingList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,6 +74,7 @@ public class ShoppingListActivity extends AppCompatActivity{
             }
         });
 
+// ------------------ Section for reset button ---------------------------------------------
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
@@ -83,7 +85,7 @@ public class ShoppingListActivity extends AppCompatActivity{
             }
         });
 
-        //Add items into ShoppingList
+        //Load items into shopping list
         loadData();
 
         //Build RecyclerView
@@ -95,7 +97,9 @@ public class ShoppingListActivity extends AppCompatActivity{
         dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         dividerItemDecoration.setDrawable(getResources().getDrawable(R.drawable.recyclerview_divider));
         recyclerView.addItemDecoration(dividerItemDecoration);
+        new ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(recyclerView);
         recyclerView.setAdapter(slAdapter);
+
 
 // ------------------ Section for receiving intent from addtoShoppingList activity ---------------------------------------------
         if (getIntent().getExtras() != null){
@@ -111,9 +115,6 @@ public class ShoppingListActivity extends AppCompatActivity{
 // ------------------ Section for building the methods ---------------------------------------------
         // Save ShoppingList data
         saveData();
-
-        // Call method to Build Searchable Spinner
-        buildSearchableSpinner();
 
         //Build Bottom Navigation Bar
         //Set Home Page selected
@@ -164,72 +165,20 @@ public class ShoppingListActivity extends AppCompatActivity{
             shoppingList = new ArrayList<>();
         }
     }
-    // this code down here just for testing only right ?? (delete this comment)
-    /*public ArrayList<ShoppingList> addItemsIntoShoppingList(ArrayList<ShoppingList> sList, ShoppingList addedItem) {
-        /*for (int i = 1; i < 5; i++){
-            ShoppingList item = new ShoppingList("ItemName" + String.valueOf(i), "Item", null ,100.0, 9.0);
-            sList.add(item);
-        }
-        ShoppingList item1 = new ShoppingList("Food", "F", 9, 100.0, "bread");
-        ShoppingList item2 = new ShoppingList("Drink", "D", 9, 100.0, "pepsi");
-        ShoppingList item3 = new ShoppingList("Household Item", "H", 9, 100.0, "tissues");
-        ShoppingList item4 = new ShoppingList("Pet Item", "P", 9, 100.0, "pet food");
-        sList.add(item1);
-        sList.add(item2);
-        sList.add(item3);
-        sList.add(item4);
-        if (addedItem != null) {
-            sList.add(addedItem);
-        }
-        return sList;
-    }*/
 // ------------------ Section for method to build Spinner ---------------------------------------------
-    public void buildSearchableSpinner() {
-        for (int i = 0; i < shoppingList.size(); i++) {
-            shoppingListItemName.add(shoppingList.get(i).itemName);
+    ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
         }
-        spinnerTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Dialog
-                dialog = new Dialog(ShoppingListActivity.this);
-                dialog.setContentView(R.layout.dialog_searchable_spinner);
-                dialog.getWindow().setLayout(650, 800);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialog.show();
 
-                EditText editText = dialog.findViewById(R.id.edit_text);
-                ListView listView = dialog.findViewById(R.id.list_view);
-
-                ArrayAdapter<String> adapter = new ArrayAdapter<>(ShoppingListActivity.this, android.R.layout.simple_list_item_1, shoppingListItemName);
-                listView.setAdapter(adapter);
-
-                editText.addTextChangedListener(new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-                        adapter.getFilter().filter(s);
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable s) {
-
-                    }
-                });
-                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        spinnerTextView.setText(String.valueOf(adapter.getItem(position)));
-                        dialog.dismiss();
-                    }
-                });
-            }
-        });
-    }
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+            shoppingList.remove(viewHolder.getAdapterPosition());
+            saveData();
+            slAdapter.notifyDataSetChanged();
+        }
+    };
 
     @Override
     public void finish(){
