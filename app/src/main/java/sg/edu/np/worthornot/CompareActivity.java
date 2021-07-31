@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -63,14 +64,18 @@ public class CompareActivity extends AppCompatActivity {
         addtoCompareButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CompareItem temporaryItem = new CompareItem();
-                temporaryItem.setPrice(Double.valueOf(priceInput.getText().toString()));
-                temporaryItem.setAmount(Integer.valueOf(amountInput.getText().toString()));
-                temporaryItem.setBrand(brandInput.getText().toString());
-                compareList.add(temporaryItem);
-                compareAdapter.notifyDataSetChanged();
-                Toast.makeText(CompareActivity.this,
-                        "Added to Compare!", Toast.LENGTH_SHORT).show();
+                if (TextUtils.isEmpty(brandInput.getText().toString())) {
+
+                }
+                else {
+                    CompareItem temporaryItem = new CompareItem();
+                    temporaryItem.setPrice(Double.valueOf(priceInput.getText().toString()));
+                    temporaryItem.setAmount(Integer.valueOf(amountInput.getText().toString()));
+                    temporaryItem.setBrand(brandInput.getText().toString());
+                    compareList.add(temporaryItem);
+                    compareAdapter.notifyDataSetChanged();
+                    Toast.makeText(CompareActivity.this, "Added to Compare!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
