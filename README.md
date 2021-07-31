@@ -56,8 +56,8 @@ detailed, step-by-step operation of each feature will be underlined in the [User
   - This feature fulfills criteria #2, by allowing a user to plan their trip to the grocery store before they even 
     leave the house. The items stored in the list are inputted completely up to the user's exact specifications, with a dynamically
     changing icon according to the type of product.
-      
-     ![image](https://user-images.githubusercontent.com/77566547/127745767-d6659f6b-1f02-4ea8-90f3-9cd6367b59f2.png)
+    
+  ![image](https://user-images.githubusercontent.com/77566547/127747841-670f95ca-8f0f-480f-8f49-7a15885405d2.png)
   
   #### Firebase Cloud Storage 
   - Firebase is a Google application software that enables mobile app developers to develop iOS, 
@@ -78,8 +78,8 @@ detailed, step-by-step operation of each feature will be underlined in the [User
  6. The brand of the product, as well as the value (value = price / amount) will be displayed in the table, from left to right
  7. User can then look between the products being compared and determine which product is most worth~~or not~~
  
- +  **Additionally,** any of the products added into the Compare table can be added directly to the shopping list if desired. This can be 
-    done by tapping on the "Add to Shopping List" button found on each product listed in the Compare table. 
+ +  **Additionally,** any products added into the Compare table can be added directly to the shopping list if desired. 
+    This can be done by tapping on the "Add to Shopping List" button found on each product listed in the Compare table. 
     
     1. All previously filled fields by user (Price, Brand and Amount) will be automatically filled, and can still be editted.
     2. User can input additional information needed for a shopping list such as the Name and Quantity to be purchased 
