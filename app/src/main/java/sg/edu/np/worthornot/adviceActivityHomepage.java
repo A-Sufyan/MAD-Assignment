@@ -102,6 +102,7 @@ public class adviceActivityHomepage extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), adviceActivity.class);
         intent.putExtras(extras);
         startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
     @Override
@@ -111,6 +112,11 @@ public class adviceActivityHomepage extends AppCompatActivity {
     @Override
     protected void onResume(){
         super.onResume();
+    }
+    @Override
+    public void finish(){
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
     @Override
     protected void onStop(){
