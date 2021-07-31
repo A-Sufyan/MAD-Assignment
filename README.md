@@ -40,7 +40,8 @@ detailed, step-by-step operation of each feature will be underlined in the [User
   #### Comparer
   - This feature fulfills criteria #3 and #1 under the descirption. It allows users to add in the price and amount of a product
     they find during a grocery shopping trip, and quickly compare them against each other to determine the product
-    with best value, therefore saving on both time and money.
+    with best value, therefore saving on both time and money. The product can also be directly added from the Compare feature,
+    into the Shopping List feature.
     
     ![image](https://user-images.githubusercontent.com/77566547/126972143-0b876e65-d4c0-4e79-936c-2844a86a1570.png)
 
@@ -74,7 +75,8 @@ detailed, step-by-step operation of each feature will be underlined in the [User
  5. Repeat steps 1-4 for the other product, or as many products as desired
  6. The brand of the product, as well as the value (value = price / amount) will be displayed in the table, from left to right
  7. User can then look between the products being compared and determine which product is most worth~~or not~~
-
+ 8. User finally can choose to tap on the "Add to Shopping List" button.
+ 
  #### **Usage of Advice Page**
  1. User can scroll through the list of products found in this page
  2. Upon selection of any of the items, they will be redirected to a second page where the description of the item is 
@@ -101,12 +103,13 @@ detailed, step-by-step operation of each feature will be underlined in the [User
   - Designed Pitch slides
   - Implemented Shopping List Page
   - Implemented Firebase
-
+  
 - Tan Jing Yu 🙃 _(S10204382)_ 
   - Implemented Comparer Page
   - Implemented Advice Page
-  - Designed UI
-  - Wrote this file you're reading now
+  - Implemented Add To Shopping List 
+  - Designed UI & Layout
+  - Wrote this whole file you're reading now
 
 ## Acknowledgements
 🙏 Thank you to all who helped along the way
