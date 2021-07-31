@@ -14,12 +14,14 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -28,6 +30,8 @@ import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 
+import static android.content.ContentValues.TAG;
+
 public class ShoppingListActivity extends AppCompatActivity{
 
 // ------------------ Section for variable initialization  ---------------------------------------------
@@ -35,11 +39,15 @@ public class ShoppingListActivity extends AppCompatActivity{
     Dialog dialog;
     ArrayList<ShoppingList> shoppingList = new ArrayList<>();
     ArrayList<String> shoppingListItemName = new ArrayList<>();
-    ShoppingList temporaryItem;
-    Button manualAddToShoppingList;
+    ShoppingList temporaryItem = new ShoppingList();
+    ImageView manualAddToShoppingList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_shoppinglist);
+// ------------------ Section for receiving intent from addtoShoppingList activity ---------------------------------------------
+
         if (getIntent().getExtras() != null){
             Bundle recieveData = getIntent().getExtras();
             temporaryItem.setItemName(recieveData.getString("newName"));
@@ -49,14 +57,10 @@ public class ShoppingListActivity extends AppCompatActivity{
             temporaryItem.setItemPrice(recieveData.getDouble("newPrice"));
         }
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shoppinglist);
-
 // ------------------ Section for variable assignment---------------------------------------------
         spinnerTextView = findViewById(R.id.text_view);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        manualAddToShoppingList = findViewById(R.id.addtoShoppingList_Button);
-
+        manualAddToShoppingList = findViewById(R.id.manualAddToShoppingListButton);
         manualAddToShoppingList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

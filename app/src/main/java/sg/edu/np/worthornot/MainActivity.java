@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         - Finish implementing Cloud Storage
         - Input validation for AddToShoppingListActivity (if any fields are blank then put
         * some toast to tell the fker to stop)
+        * WHEN SUBMITTING : REMOVE ALL LOG
      */
     private final static String TAG = "Main Activity";
 

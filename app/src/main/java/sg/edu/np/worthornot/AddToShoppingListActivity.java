@@ -41,7 +41,7 @@ public class AddToShoppingListActivity extends AppCompatActivity {
         addToShoppingList = findViewById(R.id.addtoShoppingList_Button);
 
 // ------------------ Section for receiving Intent if adding from CompareActivity ---------------------------------------------
-        if (getIntent().getExtras().containsKey("productBrand")){
+        if (getIntent().getExtras() != null && getIntent().getExtras().containsKey("productBrand")){
             Bundle recieveData = getIntent().getExtras();
             receivedBrand = recieveData.getString("productBrand");
             receivedPrice = String.valueOf(recieveData.getDouble("productPrice"));
@@ -73,7 +73,6 @@ public class AddToShoppingListActivity extends AppCompatActivity {
         addToShoppingList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.v(TAG, "ATShoppingList button Clicked");
                 Bundle extras = new Bundle();
                 extras.putString("newName", Name.getText().toString());
                 extras.putString("newCategory", newCategory);
@@ -83,7 +82,7 @@ public class AddToShoppingListActivity extends AppCompatActivity {
                 extras.putDouble("newPrice", Double.valueOf(
                         Price.getText().toString()
                 ));
-                Intent intent = new Intent(getApplicationContext(),
+                Intent intent = new Intent(AddToShoppingListActivity.this,
                         ShoppingListActivity.class);
                 intent.putExtras(extras);
                 startActivity(intent);
