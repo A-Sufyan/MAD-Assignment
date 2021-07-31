@@ -140,6 +140,7 @@ public class CompareActivity extends AppCompatActivity {
         Intent intent = new Intent(CompareActivity.this, AddToShoppingListActivity.class);
         intent.putExtras(extras);
         startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
     @Override
@@ -149,6 +150,12 @@ public class CompareActivity extends AppCompatActivity {
     @Override
     protected void onResume(){
         super.onResume();
+    }
+
+    @Override
+    public void finish(){
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
     @Override
     protected void onStop(){

@@ -15,14 +15,9 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
     /* TODO:
-    *   - Allow CompareActivity to be able to add directly into shopping list
-        - Fix shopppingListActivity (align stuff properly)
+    *   - Fix shopppingListActivity (align stuff properly)
         - Add headers for shoppingList
         - Finish implementing Cloud Storage
-        *
-        - Input validation for AddToShoppingListActivity (if any fields are blank then put
-        * some toast to tell the fker to stop)
-
         * WHEN SUBMITTING : REMOVE ALL LOG
      */
     private final static String TAG = "Main Activity";
@@ -54,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.v(TAG, "Going to Compare page");
                 intent = new Intent(MainActivity.this, CompareActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 
@@ -64,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.v(TAG, "Going to Shopping List page");
                 intent = new Intent(MainActivity.this, ShoppingListActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 
@@ -74,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.v(TAG, "Going to advice page");
                 intent = new Intent(MainActivity.this, adviceActivityHomepage.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 
@@ -104,6 +102,11 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+    @Override
+    public void finish(){
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
     @Override
     protected void onStart(){

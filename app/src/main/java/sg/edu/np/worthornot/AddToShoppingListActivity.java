@@ -125,6 +125,7 @@ public class AddToShoppingListActivity extends AppCompatActivity {
                             ShoppingListActivity.class);
                     intent.putExtras(extras);
                     startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 }
 
             }
@@ -132,7 +133,11 @@ public class AddToShoppingListActivity extends AppCompatActivity {
     }
 
 
-
+    @Override
+    public void finish(){
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }
     @Override
     protected void onStart(){
         super.onStart();
