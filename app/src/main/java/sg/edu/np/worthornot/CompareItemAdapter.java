@@ -42,12 +42,12 @@ public class CompareItemAdapter extends
             itemPricePerAmt = itemView.findViewById(
                     R.id.compare_layoutPricePerAmount);
             AddToShoppingListButton = itemView.findViewById(R.id.addtoShoppingList);
+            AddToShoppingListButton.setOnClickListener(this);
         }
 
         @Override
         public void onClick (View v){
             listener.onClick(v, getAdapterPosition());
-            Log.v(TAG, "Compare Item Button Clicked!");
         }
     }
 

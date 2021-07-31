@@ -19,14 +19,15 @@ import com.google.android.material.navigation.NavigationBarView;
 import java.util.ArrayList;
 
 public class adviceActivityHomepage extends AppCompatActivity {
-
+// -------------------------------- Section to initialize variables ------------------------------------------------------------
     ArrayList<ShoppingList> myList = new ArrayList<>();
     private final static String TAG = "AdviceActivityHomepage";
     private adviceActivityAdapter.RecyclerViewClickListener listener;
     DBHandler dbHandler = new DBHandler(
             this,null,null,1
     );
-// -------------------------------- Section for oncreate() ------------------------------------------------------------
+
+// -------------------------------- Section for onCreate() ------------------------------------------------------------
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,10 +49,11 @@ public class adviceActivityHomepage extends AppCompatActivity {
         recyclerView.addItemDecoration(dividerItemDecoration);
         recyclerView.setAdapter(myAdapter);
 
-// ------------------------------- Bottom Navigation Bar: Set Home Page selected --------------------------------------------------------------
+//------------------   Section for Bottom nav bar   -----------------------------------------------------------
+        //Bottom Navigation Bar: Set Home Page selected
         bottomNavigationView.setSelectedItemId(R.id.advicepage);
 
-//------------------------------- Bottom Navigation Bar: ItemSelectedListener ---------------------------------------------------------------------------------------------
+        //Bottom Navigation Bar: ItemSelectedListener
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -75,6 +77,7 @@ public class adviceActivityHomepage extends AppCompatActivity {
             }
         });
     }
+
 // ------------------------------- Methods -----------------------------------------------------------------------------
 
 // ------------------------------- Method to set on click listener for recyclerview --------------------------------------

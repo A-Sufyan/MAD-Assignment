@@ -18,7 +18,7 @@ public class adviceActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_advice);
 
-// ------------------ Section for initializing variables ---------------------------------------------
+// ------------------ Section for variable Assignment & Initialization ---------------------------------------------
         TextView productName = findViewById(R.id.adviceActivityitemTitle);
         TextView productDesc = findViewById(R.id.adviceActivityDescription);
         ImageView productIcon = findViewById(R.id.adviceActivityProductIcon);
