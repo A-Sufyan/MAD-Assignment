@@ -60,15 +60,15 @@ public class adviceActivityHomepage extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.homepage:
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        overridePendingTransition(0, 0);
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                         return true;
                     case R.id.comparerpage:
                         startActivity(new Intent(getApplicationContext(), CompareActivity.class));
-                        overridePendingTransition(0, 0);
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                         return true;
                     case R.id.shoppinglistpage:
                         startActivity(new Intent(getApplicationContext(), ShoppingListActivity.class));
-                        overridePendingTransition(0, 0);
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                         return true;
                     case R.id.advicepage:
                         return true;

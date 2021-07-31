@@ -1,13 +1,17 @@
 package sg.edu.np.worthornot;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 public class adviceActivity extends AppCompatActivity {
     private final static String TAG = "Advice Activity";
@@ -44,7 +48,34 @@ public class adviceActivity extends AppCompatActivity {
         productName.setText(recievedName);
         productDesc.setText(recievedDesc);
 
+        //Bottom Navigation Bar: Set Home Page selected
+        bottomNavigationView.setSelectedItemId(R.id.advicepage);
 
+        //Bottom Navigation Bar: ItemSelectedListener
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.homepage:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                        return true;
+                    case R.id.comparerpage:
+                        startActivity(new Intent(getApplicationContext(), CompareActivity.class));
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                        return true;
+                    case R.id.shoppinglistpage:
+                        startActivity(new Intent(getApplicationContext(), ShoppingListActivity.class));
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                        return true;
+                    case R.id.advicepage:
+                        startActivity(new Intent(getApplicationContext(), adviceActivityHomepage.class));
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                        return true;
+                }
+                return false;
+            }
+        });
     }
 
     @Override

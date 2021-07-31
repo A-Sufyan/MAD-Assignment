@@ -15,9 +15,8 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
     /* TODO:
-    *   - Fix shopppingListActivity (align stuff properly)
-        - Add headers for shoppingList
-        - Finish implementing Cloud Storage
+    *   - Add headers for shoppingList
+        - Finish implementing Cloud Storage (MAYBE NOT)
         * WHEN SUBMITTING : REMOVE ALL LOG
      */
     private final static String TAG = "Main Activity";
@@ -88,15 +87,15 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     case R.id.comparerpage:
                         startActivity(new Intent(getApplicationContext(), CompareActivity.class));
-                        overridePendingTransition(0, 0);
+                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                         return true;
                     case R.id.shoppinglistpage:
                         startActivity(new Intent(getApplicationContext(), ShoppingListActivity.class));
-                        overridePendingTransition(0, 0);
+                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                         return true;
                     case R.id.advicepage:
                         startActivity(new Intent(getApplicationContext(), adviceActivityHomepage.class));
-                        overridePendingTransition(0, 0);
+                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                         return true;
                 }
                 return false;
