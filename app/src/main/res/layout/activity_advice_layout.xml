@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="20dp"
     android:layout_marginBottom="20dp"
-    android:background="@color/graypink"
+    android:background="@color/colorPrimary"
     android:orientation="vertical">
 
     <TextView
@@ -17,6 +17,7 @@
         android:fontFamily="@font/raleway"
         android:gravity="left"
         android:padding="5dp"
+        android:textColor="@color/textColor"
         android:text="Product name here"
         android:textSize="20sp" />
 </LinearLayout>

@@ -51,7 +51,6 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListViewHo
             holder.itemPrice.setText(String.valueOf("Quantity: x"+shoppingItem.getItemAmount()));
             holder.itemImage.setImageResource(R.drawable.ic_household_items);
         }
-
         else {
             holder.itemName.setText("Item not found!");
         }
