@@ -35,8 +35,8 @@ public class ShoppingListAdapter extends RecyclerView.Adapter<ShoppingListViewHo
         ShoppingList shoppingItem = shoppingData.get(position);
         if (shoppingItem.getItemCategory().equals("F")) {
             holder.itemName.setText(shoppingItem.getItemName());
-            holder.itemAmount.setText('$' + String.valueOf(String.format("%.2f", shoppingItem.getItemPrice())));
-            holder.itemPrice.setText(String.valueOf(shoppingItem.getItemAmount()) + " (g)");
+            holder.itemAmount.setText("Price: $" + String.valueOf(String.format("%.2f", shoppingItem.getItemPrice())));
+            holder.itemPrice.setText(String.valueOf("Quantity: x"+shoppingItem.getItemAmount()));
             holder.itemImage.setImageResource(R.drawable.ic_food);
         }
         else if (shoppingItem.getItemCategory().equals("D")) {
