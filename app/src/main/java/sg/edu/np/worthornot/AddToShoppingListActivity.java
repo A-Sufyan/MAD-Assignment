@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class AddToShoppingListActivity extends AppCompatActivity {
 // ------------------ Section for variable Assignment ------------------------------------------
@@ -73,19 +74,43 @@ public class AddToShoppingListActivity extends AppCompatActivity {
         addToShoppingList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bundle extras = new Bundle();
-                extras.putString("newName", Name.getText().toString());
-                extras.putString("newCategory", newCategory);
-                extras.putString("newDescription", newDescription);
-                extras.putInt("newAmount", Integer.valueOf(
-                        Quantity.getText().toString()));
-                extras.putDouble("newPrice", Double.valueOf(
-                        Price.getText().toString()
-                ));
-                Intent intent = new Intent(AddToShoppingListActivity.this,
-                        ShoppingListActivity.class);
-                intent.putExtras(extras);
-                startActivity(intent);
+                if (Brand.getText().toString().equals("")){
+                    Toast.makeText(AddToShoppingListActivity.this,
+                            "Brand field is empty!", Toast.LENGTH_SHORT).show();
+                }
+                else if (Name.getText().toString().equals("")){
+                    Toast.makeText(AddToShoppingListActivity.this,
+                            "Name field is empty!", Toast.LENGTH_SHORT).show();
+                }
+                else if(Category.getText().toString().equals("")){
+                    Toast.makeText(AddToShoppingListActivity.this,
+                            "Category field is empty!", Toast.LENGTH_SHORT).show();
+                }
+                else if(Quantity.getText().toString().equals("")){
+                    Toast.makeText(AddToShoppingListActivity.this,
+                            "Quantity field is empty!", Toast.LENGTH_SHORT).show();
+                }
+                else if(Price.getText().toString().equals("")){
+                    Toast.makeText(AddToShoppingListActivity.this,
+                            "Price field is empty!", Toast.LENGTH_SHORT).show();
+                }
+
+                else{
+                    Bundle extras = new Bundle();
+                    extras.putString("newName", Name.getText().toString());
+                    extras.putString("newCategory", newCategory);
+                    extras.putString("newDescription", newDescription);
+                    extras.putInt("newAmount", Integer.valueOf(
+                            Quantity.getText().toString()));
+                    extras.putDouble("newPrice", Double.valueOf(
+                            Price.getText().toString()
+                    ));
+                    Intent intent = new Intent(AddToShoppingListActivity.this,
+                            ShoppingListActivity.class);
+                    intent.putExtras(extras);
+                    startActivity(intent);
+                }
+
             }
         });
 
