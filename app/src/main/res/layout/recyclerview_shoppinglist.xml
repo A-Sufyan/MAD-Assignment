@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="100dp"
-    android:background="@color/graypink"
+    android:background="@color/colorPrimary"
     android:layout_alignParentLeft="true"
     app:layout_anchorGravity="left"
     android:gravity="left">
@@ -43,6 +43,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/raleway"
                 android:text="{insert item name}"
+                android:textColor="@color/textColor"
                 android:textSize="24sp" />
 
             <LinearLayout
@@ -60,7 +61,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/raleway"
-                        android:text="{insert item amount}" />
+                        android:text="{insert item amount}"
+                        android:textColor="@color/textColor"/>
 
                     <TextView
                         android:id="@+id/textView_ItemPrice"
@@ -68,6 +70,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="@font/raleway"
+                        android:textColor="@color/textColor"
                         android:text="{insert item price}" />
 
                 </LinearLayout>
@@ -75,7 +78,8 @@
                 <CheckBox
                     android:id="@+id/checkBox"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/textColor"/>
             </LinearLayout>
 
         </LinearLayout>

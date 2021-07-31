@@ -52,15 +52,15 @@ public class AddToShoppingListActivity extends AppCompatActivity {
         }
 
 // ------------------ Section for setting category and description ---------------------------------------------
-        if (Category.getText().toString().toUpperCase() == "F"){
+        if (Category.toString().toUpperCase().equals("F")){
             newCategory = "F";
             newDescription = "This is a Food product";
         }
-        else if (Category.getText().toString().toUpperCase() == "D"){
+        else if (Category.getText().toString().toUpperCase().equals("D")){
             newCategory = "D";
             newDescription = "This is a Drink product";
         }
-        else if (Category.getText().toString().toUpperCase() == "H"){
+        else if (Category.getText().toString().toUpperCase().equals("H")){
             newCategory = "H";
             newDescription = "This is a Household product";
         }
@@ -88,8 +88,6 @@ public class AddToShoppingListActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 
 

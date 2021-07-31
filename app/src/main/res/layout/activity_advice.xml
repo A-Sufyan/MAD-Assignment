@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/graypink"
+    android:background="@color/colorPrimary"
     tools:context=".adviceActivity">
 
     <TextView
@@ -14,6 +14,7 @@
         android:layout_marginTop="76dp"
         android:fontFamily="@font/raleway"
         android:text="Description"
+        android:textColor="@color/textColor"
         android:textAlignment="center"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,6 +28,7 @@
         android:layout_marginTop="60dp"
         android:fontFamily="@font/raleway"
         android:text='"product name here"'
+        android:textColor="@color/textColor"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,6 +54,7 @@
         android:fontFamily="@font/raleway"
         android:text="Insert entire description of the product inside this textview this text is long to see if everything fits inside here"
         android:textAlignment="center"
+        android:textColor="@color/textColor"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
