@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
         - Add headers for shoppingList
         - Icon on top of description, enclose entire thing in rectangle (main layout),
         - Finish implementing Cloud Storage
+        - Input validation for AddToShoppingListActivity (if any fields are blank then put
+        * some toast to tell the fker to stop)
+        * WHEN SUBMITTING : REMOVE ALL LOG
      */
     private final static String TAG = "Main Activity";
 

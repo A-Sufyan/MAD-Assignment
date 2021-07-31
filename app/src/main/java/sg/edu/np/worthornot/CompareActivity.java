@@ -9,10 +9,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -22,15 +24,18 @@ import java.util.ArrayList;
 public class CompareActivity extends AppCompatActivity {
 
 //------------------   Section to Initialize variables -----------------------------------------------------------
-    ArrayList<ShoppingList> shoppingList; //To add food items into shopping list after comparison/calculation
+    private final static String TAG = "CompareActivity";
+    private CompareItemAdapter.RecyclerViewClickListener listener;
     ArrayList<CompareItem> compareList = new ArrayList<CompareItem>();
     EditText brandInput;
     EditText amountInput;
     EditText priceInput;
     Button addtoCompareButton;
+
 //------------------   Section for onCreate()  -----------------------------------------------------------
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.v(TAG, "On Create CompareActivity");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compare);
 
@@ -41,11 +46,12 @@ public class CompareActivity extends AppCompatActivity {
         addtoCompareButton = findViewById(R.id.addtoCompare);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-//------------------   Section for building recyclerView  -----------------------------------------------------------
+//------------------   Section to build recyclerView  -----------------------------------------------------------
+        setOnClickListener();
         RecyclerView recyclerViewCompare = findViewById(R.id.compareRecyclerView);
-        CompareItemAdapter compareAdapter = new CompareItemAdapter(compareList);
+        CompareItemAdapter compareAdapter = new CompareItemAdapter(compareList, listener);
         LinearLayoutManager compareLayoutManager = new LinearLayoutManager
-                (this, LinearLayoutManager.HORIZONTAL, true);
+                (this, LinearLayoutManager.HORIZONTAL, false);
         recyclerViewCompare.setLayoutManager(compareLayoutManager);
         recyclerViewCompare.setItemAnimator(new DefaultItemAnimator());
         /*DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL);
@@ -63,6 +69,8 @@ public class CompareActivity extends AppCompatActivity {
                 temporaryItem.setBrand(brandInput.getText().toString());
                 compareList.add(temporaryItem);
                 compareAdapter.notifyDataSetChanged();
+                Toast.makeText(CompareActivity.this,
+                        "Added to Compare!", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -94,6 +102,30 @@ public class CompareActivity extends AppCompatActivity {
             }
         });
     }
+// ------------------------------- Methods -----------------------------------------------------------------------------
+
+// ------------------------------- Method to set on click listener for recyclerview --------------------------------------
+    private void setOnClickListener() {
+        listener = new CompareItemAdapter.RecyclerViewClickListener(){
+            @Override
+            public void onClick(View v, int pos){
+                Log.v(TAG, "Item in Rview Clicked");
+                ClickedAddToShoppingListButton(pos);
+            }
+        };
+    }
+
+// ------------------------------- Method when recyclerview listener is clicked --------------------------------------
+    private void ClickedAddToShoppingListButton(int position){
+        Bundle extras = new Bundle();
+        extras.putString("productBrand", compareList.get(position).getBrand());
+        extras.putDouble("productPrice", compareList.get(position).getPrice());
+        extras.putInt("productQuantity", compareList.get(position).getAmount());
+        Intent intent = new Intent(CompareActivity.this, AddToShoppingListActivity.class);
+        intent.putExtras(extras);
+        startActivity(intent);
+    }
+
     @Override
     protected void onStart(){
         super.onStart();
