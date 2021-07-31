@@ -55,6 +55,15 @@ public class ShoppingListActivity extends AppCompatActivity{
 // ------------------ Section for variable assignment---------------------------------------------
         spinnerTextView = findViewById(R.id.text_view);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        manualAddToShoppingList = findViewById(R.id.addtoShoppingList_Button);
+
+        manualAddToShoppingList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), AddToShoppingListActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //Add items into ShoppingList
         addItemsIntoShoppingList(shoppingList);
