@@ -63,14 +63,30 @@ public class CompareActivity extends AppCompatActivity {
         addtoCompareButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CompareItem temporaryItem = new CompareItem();
-                temporaryItem.setPrice(Double.valueOf(priceInput.getText().toString()));
-                temporaryItem.setAmount(Integer.valueOf(amountInput.getText().toString()));
-                temporaryItem.setBrand(brandInput.getText().toString());
-                compareList.add(temporaryItem);
-                compareAdapter.notifyDataSetChanged();
-                Toast.makeText(CompareActivity.this,
-                        "Added to Compare!", Toast.LENGTH_SHORT).show();
+                if (brandInput.getText().toString().equals("")) {
+                    Toast.makeText(CompareActivity.this,
+                            "Brand field is empty!", Toast.LENGTH_SHORT).show();
+
+                }
+                else if(priceInput.getText().toString().equals("")){
+                    Toast.makeText(CompareActivity.this,
+                            "Price field is empty!", Toast.LENGTH_SHORT).show();
+                }
+                else if (amountInput.getText().toString().equals("")) {
+                    Toast.makeText(CompareActivity.this,
+                            "Amount field is empty!", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    CompareItem temporaryItem = new CompareItem();
+                    temporaryItem.setPrice(Double.valueOf(priceInput.getText().toString()));
+                    temporaryItem.setAmount(Integer.valueOf(amountInput.getText().toString()));
+                    temporaryItem.setBrand(brandInput.getText().toString());
+                    compareList.add(temporaryItem);
+                    compareAdapter.notifyDataSetChanged();
+                    Toast.makeText(CompareActivity.this,
+                            "Added to Compare!", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
