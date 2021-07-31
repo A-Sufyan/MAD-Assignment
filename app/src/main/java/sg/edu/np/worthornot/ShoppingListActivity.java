@@ -232,6 +232,11 @@ public class ShoppingListActivity extends AppCompatActivity{
     }
 
     @Override
+    public void finish(){
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }
+    @Override
     protected void onStart(){
         super.onStart();
     }
@@ -242,7 +247,6 @@ public class ShoppingListActivity extends AppCompatActivity{
     @Override
     protected void onPause(){
         super.onPause();
-
     }
     @Override
     protected void onStop(){
