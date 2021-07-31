@@ -9,9 +9,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -27,8 +29,12 @@ import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Set;
 
 import static android.content.ContentValues.TAG;
 
@@ -41,25 +47,24 @@ public class ShoppingListActivity extends AppCompatActivity{
     ArrayList<String> shoppingListItemName = new ArrayList<>();
     ShoppingList temporaryItem = new ShoppingList();
     ImageView manualAddToShoppingList;
+    RecyclerView recyclerView;
+    ShoppingListAdapter slAdapter;
+    LinearLayoutManager slLayoutManager;
+    DividerItemDecoration dividerItemDecoration;
+    BottomNavigationView bottomNavigationView;
+    Button resetButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shoppinglist);
-// ------------------ Section for receiving intent from addtoShoppingList activity ---------------------------------------------
-        if (getIntent().getExtras() != null){
-            Bundle recieveData = getIntent().getExtras();
-            temporaryItem.setItemName(recieveData.getString("newName"));
-            temporaryItem.setItemCategory(recieveData.getString("newCategory"));
-            temporaryItem.setItemDescription(recieveData.getString("newDescription"));
-            temporaryItem.setItemAmount(recieveData.getInt("newAmount"));
-            temporaryItem.setItemPrice(recieveData.getDouble("newPrice"));
-        }
 
 // ------------------ Section for variable assignment---------------------------------------------
         spinnerTextView = findViewById(R.id.text_view);
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
         manualAddToShoppingList = findViewById(R.id.manualAddToShoppingListButton);
+        resetButton = findViewById(R.id.resetButton);
+
         manualAddToShoppingList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,11 +73,44 @@ public class ShoppingListActivity extends AppCompatActivity{
             }
         });
 
-        //Add items into ShoppingList
-        addItemsIntoShoppingList(shoppingList, temporaryItem);
+        resetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                shoppingList = new ArrayList<>();
+                saveData();
+                Intent intent = new Intent(getApplicationContext(), ShoppingListActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        // Call method to Build RecyclerView
-        buildRecyclerView();
+        //Add items into ShoppingList
+        loadData();
+
+        //Build RecyclerView
+        recyclerView = findViewById(R.id.recyclerView_ShoppingList);
+        slAdapter = new ShoppingListAdapter(shoppingList);
+        slLayoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(slLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+        dividerItemDecoration.setDrawable(getResources().getDrawable(R.drawable.recyclerview_divider));
+        recyclerView.addItemDecoration(dividerItemDecoration);
+        recyclerView.setAdapter(slAdapter);
+
+// ------------------ Section for receiving intent from addtoShoppingList activity ---------------------------------------------
+        if (getIntent().getExtras() != null){
+            Bundle recieveData = getIntent().getExtras();
+            temporaryItem.setItemName(recieveData.getString("newName"));
+            temporaryItem.setItemCategory(recieveData.getString("newCategory"));
+            temporaryItem.setItemDescription(recieveData.getString("newDescription"));
+            temporaryItem.setItemAmount(recieveData.getInt("newAmount"));
+            temporaryItem.setItemPrice(recieveData.getDouble("newPrice"));
+            shoppingList.add(temporaryItem);
+            slAdapter.notifyDataSetChanged();
+        }
+// ------------------ Section for building the methods ---------------------------------------------
+        // Save ShoppingList data
+        saveData();
 
         // Call method to Build Searchable Spinner
         buildSearchableSpinner();
@@ -106,12 +144,32 @@ public class ShoppingListActivity extends AppCompatActivity{
         });
     }
 
+    private void saveData() {
+        SharedPreferences sharedPreferences = getSharedPreferences("sharedpref", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(shoppingList);
+        editor.putString("shopping list", json);
+        editor.apply();
+    }
+
+    private void loadData() {
+        SharedPreferences sharedPreferences = getSharedPreferences("sharedpref", MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString("shopping list", null);
+        Type type = new TypeToken<ArrayList<ShoppingList>>() {}.getType();
+        shoppingList = gson.fromJson(json, type);
+
+        if (shoppingList == null){
+            shoppingList = new ArrayList<>();
+        }
+    }
     // this code down here just for testing only right ?? (delete this comment)
-    public ArrayList<ShoppingList> addItemsIntoShoppingList(ArrayList<ShoppingList> sList, ShoppingList addedItem) {
+    /*public ArrayList<ShoppingList> addItemsIntoShoppingList(ArrayList<ShoppingList> sList, ShoppingList addedItem) {
         /*for (int i = 1; i < 5; i++){
             ShoppingList item = new ShoppingList("ItemName" + String.valueOf(i), "Item", null ,100.0, 9.0);
             sList.add(item);
-        }*/
+        }
         ShoppingList item1 = new ShoppingList("Food", "F", 9, 100.0, "bread");
         ShoppingList item2 = new ShoppingList("Drink", "D", 9, 100.0, "pepsi");
         ShoppingList item3 = new ShoppingList("Household Item", "H", 9, 100.0, "tissues");
@@ -124,19 +182,7 @@ public class ShoppingListActivity extends AppCompatActivity{
             sList.add(addedItem);
         }
         return sList;
-    }
-// ------------------ Section for method to build recycler view ---------------------------------------------
-    public void buildRecyclerView() {
-        RecyclerView recyclerView = findViewById(R.id.recyclerView_ShoppingList);
-        ShoppingListAdapter slAdapter = new ShoppingListAdapter(shoppingList);
-        LinearLayoutManager slLayoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(slLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
-        dividerItemDecoration.setDrawable(getResources().getDrawable(R.drawable.recyclerview_divider));
-        recyclerView.addItemDecoration(dividerItemDecoration);
-        recyclerView.setAdapter(slAdapter);
-    }
+    }*/
 // ------------------ Section for method to build Spinner ---------------------------------------------
     public void buildSearchableSpinner() {
         for (int i = 0; i < shoppingList.size(); i++) {
@@ -192,6 +238,11 @@ public class ShoppingListActivity extends AppCompatActivity{
     @Override
     protected void onResume(){
         super.onResume();
+    }
+    @Override
+    protected void onPause(){
+        super.onPause();
+
     }
     @Override
     protected void onStop(){
