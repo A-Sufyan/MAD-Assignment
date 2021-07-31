@@ -52,24 +52,6 @@ public class AddToShoppingListActivity extends AppCompatActivity {
             Quantity.setText(receivedQuantity);
         }
 
-// ------------------ Section for setting category and description ---------------------------------------------
-        if (Category.getText().toString().toUpperCase().equals("F") ){
-            newCategory = "F";
-            newDescription = "This is a Food product";
-        }
-        else if (Category.getText().toString().toUpperCase().equals("D")){
-            newCategory = "D";
-            newDescription = "This is a Drink product";
-        }
-        else if (Category.getText().toString().toUpperCase().equals("H")){
-            newCategory = "H";
-            newDescription = "This is a Household product";
-        }
-        else {
-            newCategory = "H"; // Defaults any other inputs to household
-            newDescription = "This is a Household product";
-        }
-
 // ------------------ Section for sending variables of ShoppingList Object to ShoppingListActivity ---------------------------------------------
         addToShoppingList.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +78,22 @@ public class AddToShoppingListActivity extends AppCompatActivity {
                 }
 
                 else{
+                    if (Category.getText().toString().toUpperCase().equals("F") ){
+                        newCategory = "F";
+                        newDescription = "This is a Food product";
+                    }
+                    else if (Category.getText().toString().toUpperCase().equals("D")){
+                        newCategory = "D";
+                        newDescription = "This is a Drink product";
+                    }
+                    else if (Category.getText().toString().toUpperCase().equals("H")){
+                        newCategory = "H";
+                        newDescription = "This is a Household product";
+                    }
+                    else {
+                        newCategory = "H"; // Defaults any other inputs to household
+                        newDescription = "This is a Household product";
+                    }
                     Bundle extras = new Bundle();
                     extras.putString("newName", Name.getText().toString());
                     extras.putString("newCategory", newCategory);
