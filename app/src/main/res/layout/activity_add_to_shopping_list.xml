@@ -4,6 +4,90 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/graypink"
     tools:context=".AddToShoppingListActivity">
+
+    <EditText
+        android:id="@+id/priceEditText2"
+        android:layout_width="262dp"
+        android:layout_height="41dp"
+        android:ems="10"
+        android:fontFamily="@font/raleway"
+        android:hint="how much are you paying? ($)"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textStyle="italic"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="321dp" />
+
+    <TextView
+        android:id="@+id/addToShoppingList_BrandHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/raleway"
+        android:text="Brand"
+        android:textSize="22sp"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="177dp" />
+
+    <TextView
+        android:id="@+id/addToShoppingList_NameHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/raleway"
+        android:text="Name"
+        android:textSize="22sp"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="259dp" />
+
+    <TextView
+        android:id="@+id/addToShoppingList_QuantityHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/raleway"
+        android:text="Quantity"
+        android:textSize="22sp"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="328dp" />
+
+    <EditText
+        android:id="@+id/addToShoppingList_BrandInput"
+        android:layout_width="262dp"
+        android:layout_height="41dp"
+        android:ems="10"
+        android:fontFamily="@font/raleway"
+        android:hint="who are you buying from?"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textStyle="italic"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="169dp" />
+
+    <EditText
+        android:id="@+id/addToShoppingList_NameInput"
+        android:layout_width="262dp"
+        android:layout_height="41dp"
+        android:ems="10"
+        android:fontFamily="@font/raleway"
+        android:hint="what are you getting?"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textStyle="italic"
+        tools:layout_editor_absoluteX="133dp"
+        tools:layout_editor_absoluteY="252dp" />
+
+    <TextView
+        android:id="@+id/addToShoppingList_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/raleway"
+        android:text="Add to Shopping List"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
