@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -68,6 +69,8 @@ public class CompareActivity extends AppCompatActivity {
                 temporaryItem.setBrand(brandInput.getText().toString());
                 compareList.add(temporaryItem);
                 compareAdapter.notifyDataSetChanged();
+                Toast.makeText(CompareActivity.this,
+                        "Added to Compare!", Toast.LENGTH_SHORT).show();
             }
         });
 
