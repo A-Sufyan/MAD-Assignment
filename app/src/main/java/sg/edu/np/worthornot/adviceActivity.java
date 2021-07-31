@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class adviceActivity extends AppCompatActivity {
-    private final static String TAG = "Advice Activty";
+    private final static String TAG = "Advice Activity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -57,6 +57,7 @@ public class adviceActivityAdapter extends
         holder.productName.setText(products_list.getItemName());
     }
 
+// ------------------- Interface for RecyclerViewClickListener  -------------------------------------------------
 
     public interface RecyclerViewClickListener {
         void onClick(View v, int pos);
