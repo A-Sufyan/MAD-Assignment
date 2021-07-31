@@ -11,11 +11,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class adviceActivity extends AppCompatActivity {
     private final static String TAG = "Advice Activity";
+
+// ------------------ Section for onCreate()  ---------------------------------------------
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.v(TAG, "On Create Advice Activity");
-
         setContentView(R.layout.activity_advice);
 
 // ------------------ Section for variable Assignment & Initialization ---------------------------------------------

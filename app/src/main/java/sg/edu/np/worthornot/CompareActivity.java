@@ -122,7 +122,7 @@ public class CompareActivity extends AppCompatActivity {
         extras.putDouble("productPrice", compareList.get(position).getPrice());
         extras.putInt("productAmount", compareList.get(position).getAmount());
 
-        Intent intent = new Intent(getApplicationContext(), );
+        Intent intent = new Intent(getApplicationContext(), AddToShoppingListActivity.class);
         intent.putExtras(extras);
         startActivity(intent);
     }
