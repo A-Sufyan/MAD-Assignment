@@ -46,7 +46,7 @@ public class AddToShoppingListActivity extends AppCompatActivity {
             Bundle recieveData = getIntent().getExtras();
             receivedBrand = recieveData.getString("productBrand");
             receivedPrice = String.valueOf(recieveData.getDouble("productPrice"));
-            receivedQuantity = String.valueOf(recieveData.getInt("productQuantity"));
+
             Brand.setText(receivedBrand);
             Price.setText(receivedPrice);
             Quantity.setText(receivedQuantity);
