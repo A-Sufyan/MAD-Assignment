@@ -11,15 +11,21 @@ import java.util.ArrayList;
 
 public class adviceActivityAdapter extends
         RecyclerView.Adapter<adviceActivityAdapter.adviceActivityViewHolder>{
+
+// ------------------- Initialize a ShoppingList Array list --------------------
     ArrayList<ShoppingList> list_products;
+
+// ------------------- Initialize a RecyclerViewClickListener --------------------
     private RecyclerViewClickListener listener;
 
+// ------------------- Parse in list and listener to adapter --------------------
     public adviceActivityAdapter(ArrayList<ShoppingList> input,
                                  RecyclerViewClickListener listener){
         this.list_products = input;
         this.listener = listener;
     }
 
+// ----------------------------- Implementation of adviceActivityViewHolder ----------------------
     public class adviceActivityViewHolder extends RecyclerView.ViewHolder
     implements View.OnClickListener{
         TextView productName;
@@ -36,20 +42,26 @@ public class adviceActivityAdapter extends
         }
     }
 
+// ------------------- Method onCreateViewHolder  ------------------------------ --------------------
     public adviceActivityViewHolder onCreateViewHolder(ViewGroup parent, int ViewType){
         View item = LayoutInflater.from(parent.getContext()).inflate(
                 R.layout.activity_advice_layout, parent, false
         );
         return new adviceActivityViewHolder(item);
     }
+
+
+// ------------------- Method onBindViewHolder  -------------------------------------------------
     public void onBindViewHolder(adviceActivityViewHolder holder, int pos){
         ShoppingList products_list = list_products.get(pos);
         holder.productName.setText(products_list.getItemName());
     }
-    public int getItemCount() {
-        return list_products.size();}
+
 
     public interface RecyclerViewClickListener {
         void onClick(View v, int pos);
     }
+// ------------------- Method getItemCount  -------------------------------------------------
+    public int getItemCount() {
+        return list_products.size();}
 }
