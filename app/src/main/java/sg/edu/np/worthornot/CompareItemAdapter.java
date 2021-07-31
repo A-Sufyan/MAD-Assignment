@@ -62,7 +62,7 @@ public class CompareItemAdapter extends
     public void onBindViewHolder(CompareItemViewHolder holder, int pos){
         CompareItem list_items = compareData.get(pos);
         holder.itemBrand.setText(list_items.getBrand());
-        holder.itemPricePerAmt.setText(String.valueOf(list_items.CalculateValue()));
+        holder.itemPricePerAmt.setText(String.format("%.3f", list_items.CalculateValue()));
     }
 
 // ------------------- Interface for RecyclerViewClickListener  -------------------------------------------------
