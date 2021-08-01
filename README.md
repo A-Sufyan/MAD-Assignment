@@ -57,7 +57,7 @@ detailed, step-by-step operation of each feature will be underlined in the [User
     leave the house. The items stored in the list are inputted completely up to the user's exact specifications, with a dynamically
     changing icon according to the type of product.
     
-  ![image](https://user-images.githubusercontent.com/77566547/127747841-670f95ca-8f0f-480f-8f49-7a15885405d2.png)
+  ![image](https://user-images.githubusercontent.com/77566547/127764502-25d26d8b-6862-4437-a01b-05ea9b620a6d.png)  
   
   #### Firebase Cloud Storage 
   - Firebase is a Google application software that enables mobile app developers to develop iOS, 
@@ -99,6 +99,8 @@ detailed, step-by-step operation of each feature will be underlined in the [User
  3. Tap on the button located on bottom of the screen "Add to Shopping List"
  4. Item will appear in the original page. User can then check off the items with the built in check box as they shop 
     in real life.
+ 5. After the list is completed, the reset button can be tapped to clear the list of items. Individual items can also be removed
+   by swiping to the right on the specific item.
 
 ## Members 
 🎓 Detailed here are the members of the team, and their contributions:
