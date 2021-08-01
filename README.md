@@ -59,10 +59,8 @@ detailed, step-by-step operation of each feature will be underlined in the [User
     
   ![image](https://user-images.githubusercontent.com/77566547/127764502-25d26d8b-6862-4437-a01b-05ea9b620a6d.png)  
   
-  #### Firebase Cloud Storage 
-  - Firebase is a Google application software that enables mobile app developers to develop iOS, 
-    Android and Web applications. We are using Firebase as a Cloud Storage to store our product data. Having a Cloud Storage 
-    benefits the users as the mobile application would not take up a lot of storage space in their phones.
+  #### Firebase 
+  - Firebase is a Backend as a Service (BaaS) application that acts as a backend server for the mobile application. Firebase provides Firestore Database, Realtime Database,          Authentication, Crash analytics, Google analytics, Remote Configuration, and Cloud Messaging. This is helpful to developers because it provides a quick installation of the      databases, collates all application crash analytics. This is used within the app to monitor user traffic and log crashes for patching.
 
 
 ## User Guide 
@@ -107,10 +105,11 @@ detailed, step-by-step operation of each feature will be underlined in the [User
 
 - Muhammad Aidel Sufyan Abdul Manap 👽 _(S10208133)_
   - Leader
-  - Implemented Firebase
+  - Designed UI & Animations
   - Designed Bottom Navigation Bar
   - Implemented Shopping List Page
   - Implemented searchable spinner
+  - Implemented Firebase
  
 - Muhammad Fahmi Jumahat 👺 _(S10208183)_
   - Implemented Database
