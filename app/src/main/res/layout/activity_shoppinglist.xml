@@ -46,20 +46,28 @@
                 android:id="@+id/resetButton"
                 android:layout_width="wrap_content"
                 android:layout_height="45dp"
-                android:layout_weight="1"
-
                 android:layout_marginLeft="10dp"
+
+                android:layout_weight="1"
                 android:background="@color/buttonColor"
-                android:text="Reset"
+                android:fontFamily="@font/raleway"
+                android:text="reset"
+                android:textAllCaps="false"
                 android:textColor="@color/colorPrimary"
-                app:backgroundTint="@color/buttonColor" />
+                android:textSize="16sp"
+                android:textStyle="bold|italic"
+                app:backgroundTint="@color/buttonColor"
+                app:icon="@drawable/ic_baseline_replay_24" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway"
                 android:paddingLeft="25dp"
-                android:text="(Swipe right to delete item.)"
-                android:textColor="@color/textColor"/>
+                android:text="Swipe right to delete item"
+                android:textColor="@color/textColor"
+                android:textSize="10sp"
+                android:textStyle="italic" />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
