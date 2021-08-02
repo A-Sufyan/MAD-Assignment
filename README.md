@@ -110,6 +110,7 @@ detailed, step-by-step operation of each feature will be underlined in the [User
   - Implemented Shopping List Page
   - Implemented searchable spinner
   - Implemented Firebase
+  - Designed Pitch Slides
  
 - Muhammad Fahmi Jumahat 👺 _(S10208183)_
   - Implemented Database
@@ -122,6 +123,7 @@ detailed, step-by-step operation of each feature will be underlined in the [User
   - Implemented Advice Page
   - Implemented Add To Shopping List 
   - Designed UI & Layout
+  - Designed Pitch Slides
   - Wrote this whole file you're reading now
 
 ## Acknowledgements
